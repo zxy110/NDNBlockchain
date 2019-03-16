@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
+import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 
@@ -34,10 +35,10 @@ public class Secp256k1 {
      * pub.der: openssl pkey -inform DER -pubin -in pub.der -text
      * pri.der: openssl pkey -inform DER -in pri.der -text
      */
-    public static void saveKeypair(){
+    public static void saveKeypair(String filename){
         try{
-            KeyUtils.savePublicKey(publicKey,"keys/pub.der");
-            KeyUtils.savePrivateKey(privateKey,"keys/pri.der");
+            KeyUtils.savePublicKey(publicKey,"key/" + filename + "/pub.der");
+            KeyUtils.savePrivateKey(privateKey,"key/" + filename + "/pri.der");
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -47,34 +48,34 @@ public class Secp256k1 {
     /**
      * These two functions are used to get the keys
      */
-    public static PublicKey readPublicKey(){
+    public static PublicKey readPublicKey(String filename){
         try{
-            return KeyUtils.getPublicKey("keys/pub.der","EC");
+            return KeyUtils.getPublicKey("key/" + filename + "/pub.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
-    public static PrivateKey readPrivateKey(){
+    public static PrivateKey readPrivateKey(String filename){
         try{
-            return KeyUtils.getPrivateKey("keys/pri.der","EC");
+            return KeyUtils.getPrivateKey("key/" + filename + "/pri.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
 
-    public static String readPublicKeyBase64(){
+    public static String readPublicKeyBase64(String filename){
         try{
-            return KeyUtils.getPublicKeyBase64("keys/pub.der","EC");
+            return KeyUtils.getPublicKeyBase64("key/" + filename + "/pub.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
-    public static String readPrivateKeyBase64(){
+    public static String readPrivateKeyBase64(String filename){
         try{
-            return KeyUtils.getPrivateKeyBase64("keys/pri.der","EC");
+            return KeyUtils.getPrivateKeyBase64("key/" + filename + "/pri.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
@@ -84,21 +85,58 @@ public class Secp256k1 {
 
     /**
      * 签名算法(SHA256和椭圆曲线算法)
+     * 使用私钥签名data数据包
+     * 这里主要是为了UTXO中验证sig和公钥的关联，因此data设置成固定值，不作为参数传入
      *
-     * @param data 要签名的数据包
+     * @param data 数据包
+     * @param privateKey 私钥
      */
-    public static byte[] signData(byte[] data) throws Exception{
-        return Signatures.signData("SHA256withECDSA", data, privateKey);
+    public static byte[] signData(PrivateKey privateKey, byte[] data){
+        try{
+            return signData("SHA256withECDSA", data, privateKey);
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
+    /*
+     * This function is used to sign data with the algorithm and key
+     */
+    public static byte[] signData(String algorithm, byte[] data, PrivateKey key)
+            throws Exception{
+        Signature signer = Signature.getInstance(algorithm);
+        signer.initSign(key);
+        signer.update(data);
+        return (signer.sign());
+    }
+
     /**
-     * 验证签名算法(SHA256和椭圆曲线算法)
+     * 验证签名算法
+     * 用于UTXO中sig和publickey的关联验证，data设置为固定值
      *
-     * @param data 验证签名的数据包
+     * @param publicKey 公钥
      * @param sign 签名包
      */
-    public static boolean verifySign(byte[] data, byte[] sign) throws Exception{
-        return Signatures.verifySign("SHA256withECDSA", data, publicKey, sign);
+    public static boolean verifySign(PublicKey publicKey, byte[] data, byte[] sign){
+        try{
+            return verifySign("SHA256withECDSA", data, publicKey, sign);
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    /*
+     * This function is used to verify signature
+     */
+    public static boolean verifySign(String algorithm, byte[] data, PublicKey key, byte[] sig)
+            throws Exception{
+        Signature signer = Signature.getInstance(algorithm);
+        signer.initVerify(key);
+        signer.update(data);
+        return (signer.verify(sig));
     }
 }

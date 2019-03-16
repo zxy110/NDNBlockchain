@@ -1,6 +1,7 @@
 package crypto;
 
 import org.bouncycastle.util.encoders.Hex;
+import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.FileInputStream;
@@ -73,6 +74,25 @@ public class KeyUtils {
         return (bse.encode(pri.getEncoded()));
     }
 
+    /**
+     * 将公钥转化成编码成Base64格式
+     * @param pub
+     * @return
+     * @throws Exception
+     */
+    public static String PublicKey2Base64(PublicKey pub){
+        BASE64Encoder bse=new BASE64Encoder();
+        return (bse.encode(pub.getEncoded()));
+    }
+
+    public static PublicKey Base642PublicKey(String s) throws Exception{
+        byte[] keyBytes;
+        keyBytes = (new BASE64Decoder()).decodeBuffer(s);
+        X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
+        KeyFactory keyFactory = KeyFactory.getInstance("EC");
+        PublicKey publicKey = keyFactory.generatePublic(keySpec);
+        return publicKey;
+    }
 
     public static String getPublicKeyHex(String filename, String algorithm) throws Exception{
         PublicKey pub=getPublicKey(filename,algorithm);

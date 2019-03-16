@@ -1,15 +1,19 @@
 package src;
 
+import UTXO.Transaction;
+import UTXO.UTXO;
 import crypto.Hash;
 
 import java.util.ArrayList;
 
 public class BlockChain {
     public ArrayList<Block> blockChain;
+    public UTXO utxo;
 
     public BlockChain(){
-        blockChain = new ArrayList<Block>();
-        blockChain.add(GenesisBlock());
+        this.blockChain = new ArrayList<Block>();
+        this.blockChain.add(GenesisBlock());
+        utxo=new UTXO(this.blockChain);
     }
 
     /**
@@ -18,7 +22,7 @@ public class BlockChain {
      */
     public Block GenesisBlock(){
         Block genesisBlock = new Block(Hash.encodeSHA256Hex("Nchain starts".getBytes()));
-        genesisBlock.transaction.add("Genesis tranfer 2RMB to Sam");
+        genesisBlock.transaction.add(Transaction.genesisTransaction());
         genesisBlock.setAll();
         return genesisBlock;
     }
@@ -26,12 +30,14 @@ public class BlockChain {
     public void addBlock(Block block){
         block.setAll();
         blockChain.add(block);
+        utxo.addUTXO(block);
     }
 
-    public void addBlock(ArrayList<String> trans){
+    public void addBlock(ArrayList<Transaction> trans){
         Block block = new Block(blockChain.get(blockChain.size()-1).hash, trans);
         block.setAll();
         blockChain.add(block);
+        utxo.addUTXO(block);
     }
 
     public String prevBlock(){
@@ -39,7 +45,7 @@ public class BlockChain {
     }
 
     public void printBlockChain(){
-        for(Block b : blockChain){
+        for(Block b : this.blockChain){
             b.printBlock();
         }
     }
@@ -51,9 +57,9 @@ public class BlockChain {
     public void test(){
     //public static void main(String[] args) {
         BlockChain test = new BlockChain();
-        ArrayList<String> trans=new ArrayList<String>();
-        trans.add("Sarah tranfer 2RMB to Jam");
-        test.addBlock(trans);
+        ArrayList<Transaction> arr=new ArrayList<Transaction>();
+        arr.add(Transaction.generateTransaction(test.blockChain.get(0).transaction.get(0).getTxId()));
+        test.addBlock(arr);
         test.printBlockChain();
     }
 }

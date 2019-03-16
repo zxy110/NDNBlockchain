@@ -1,5 +1,6 @@
 package src;
 
+import UTXO.Transaction;
 import crypto.*;
 import org.bouncycastle.util.Arrays;
 
@@ -14,40 +15,40 @@ public class Block {
     protected long nonce;                      //随机数
     protected String hash;                     //区块hash
     protected String merkleRoot;               //Merkle树根
-    protected ArrayList<String> transaction;   //交易
+    protected ArrayList<Transaction> transaction;   //交易
     protected String target;                   //难度值
     //protected long blockSize;                //区块大小
 
     public Block(){
-        this.transaction = new ArrayList<String>();
+        this.transaction = new ArrayList<Transaction>();
     }
 
     public Block(String prevBlock){
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
-        this.transaction = new ArrayList<String>();
+        this.transaction = new ArrayList<Transaction>();
         setTimestamp();
         initNonce();
     }
 
-    public Block(String prevBlock, ArrayList<String> transaction){
+    public Block(String prevBlock, ArrayList<Transaction> transaction){
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
-        this.transaction = new ArrayList<String>();
+        this.transaction = new ArrayList<Transaction>();
         this.transaction = transaction;
         setTimestamp();
         initNonce();
     }
 
-    public Block(String prevBlock, ArrayList<String> transaction, long timestamp, long nonce){
+    public Block(String prevBlock, ArrayList<Transaction> transaction, long timestamp, long nonce){
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
         this.timestamp = timestamp;
         this.nonce = nonce;
-        this.transaction = new ArrayList<String>();
+        this.transaction = new ArrayList<Transaction>();
         this.transaction = transaction;
     }
 
@@ -90,9 +91,9 @@ public class Block {
 
     public String getMerkleRoot(){ return this.merkleRoot; }
 
-    public void setTransaction(ArrayList<String> trans){ this.transaction = trans; }
+    public void setTransaction(ArrayList<Transaction> trans){ this.transaction = trans; }
 
-    public ArrayList<String> getTransaction(){ return this.transaction;}
+    public ArrayList<Transaction> getTransaction(){ return this.transaction;}
 
     /**
      * 区块头，包含前一区块哈希值，时间戳，merkle根，难度值，随机数
@@ -111,19 +112,19 @@ public class Block {
         setHash();
     }
 
-    public void addTransaction(String s){ this.transaction.add(s); }
+    public void addTransaction(Transaction s){ this.transaction.add(s); }
 
     /**
      * 计算Merkle根
      * @return
      */
     public String calMerkleRoot(){
-        if(this.transaction.size()==0) return IOUtils.SHA256toHex("NULL".getBytes());
+        if(this.transaction.size()==0) return IOUtils.toHex("NULL".getBytes());
         ArrayList<byte[]> transArray=new ArrayList<byte[]>();
         for(int i=0;i<this.transaction.size();i++){
-            transArray.add(this.transaction.get(i).toString().getBytes());
+            transArray.add(this.transaction.get(i).getTxId().getBytes());
         }
-        return IOUtils.SHA256toHex(calMerkle(transArray));
+        return IOUtils.toHex(calMerkle(transArray));
     }
 
     protected byte[] calMerkle(ArrayList<byte[]> t){
@@ -169,8 +170,11 @@ public class Block {
         System.out.println("merkleRoot："+this.merkleRoot);
         System.out.println("timestamp："+this.timestamp);
         System.out.println("nonce："+this.nonce);
-        System.out.println("transaction："+this.transaction);
-        System.out.println();
+        System.out.println("transaction：");
+        for(Transaction trans : this.transaction){
+            trans.printTransaction();
+            System.out.println();
+        }
     }
 
     /**
@@ -181,9 +185,8 @@ public class Block {
     public static void test(){
     //public static void main(String[] args){
         Block block = new Block(Hash.encodeSHA256Hex("prevBlockHash".getBytes()));
-        block.addTransaction("Sam transfer 2RMB to Alice");
-        block.addTransaction("Alice transfer 2RMB to Bob");
-        block.addTransaction("Bob transfer 2RMB to Sarah");
+        Transaction transaction = Transaction.genesisTransaction();
+        block.addTransaction(transaction);
         block.setMerkleRoot();
         block.setHash();
 

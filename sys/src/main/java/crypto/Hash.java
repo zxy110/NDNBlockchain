@@ -48,7 +48,7 @@ public class Hash {
      * @param data 待处理的消息摘要数据
      * @return byte[] 消息摘要
      */
-    public static byte[] encodeRipeMD160(byte[] data) throws Exception {
+    public static byte[] encodeRipeMD160(byte[] data){
         try {
             //加入BouncyCastleProvider的支持
             Security.addProvider(new BouncyCastleProvider());
@@ -68,7 +68,7 @@ public class Hash {
      * @param data 待处理的消息摘要数据
      * @return String 消息摘要
      **/
-    public static String encodeRipeMD160Hex(byte[] data) throws Exception {
+    public static String encodeRipeMD160Hex(byte[] data){
         try {
             //执行消息摘要
             byte[] b = encodeRipeMD160(data);

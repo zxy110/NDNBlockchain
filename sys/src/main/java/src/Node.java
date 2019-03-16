@@ -1,6 +1,8 @@
 package src;
 
 import Consensus.Pow;
+import UTXO.Transaction;
+import UTXO.UTXO;
 
 import java.math.BigInteger;
 
@@ -13,7 +15,12 @@ public class Node {
 
     public void mining(){
         Block block = new Block(this.blockChain.prevBlock());
-        block.addTransaction("Sam transfer 2RMB to Sarah");
+        //生成一笔正确的交易
+        Transaction trans = Transaction.generateTransaction(this.blockChain.blockChain.get(0).transaction.get(0).getTxId());
+        //验证交易合法性，只有交易合法时才打包进区块
+        if(Transaction.verifyTransaction(trans, this.blockChain.utxo)){
+            block.addTransaction(trans);
+        }
         Pow.run(block);
         blockChain.addBlock(block);
     }

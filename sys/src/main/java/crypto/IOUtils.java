@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
-import java.util.Random;
-import java.util.stream.Stream;
+import java.security.PublicKey;
 
 public class IOUtils {
 
@@ -58,9 +57,9 @@ public class IOUtils {
     }
 
     /**
-     * 将SHA256结果转变为十六进制字符串：new String(Hex.encode(hash))
+     * 将哈希结果转变为十六进制字符串：new String(Hex.encode(hash))
      */
-    public static String SHA256toHex(byte[] hash){
+    public static String toHex(byte[] hash){
         return (new String(Hex.encode(hash)));
     }
 
@@ -74,6 +73,19 @@ public class IOUtils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * byte[]转String
+     * @param b
+     * @return
+     */
+    public static String byte2String(byte[] b){
+        String s="";
+        for(int i=0;i<b.length;i++){
+            s=s+b[i];
+        }
+        return s;
     }
 
     /**
