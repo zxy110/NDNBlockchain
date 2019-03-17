@@ -2,12 +2,10 @@ package src;
 
 import Consensus.Pow;
 import UTXO.Transaction;
-import UTXO.UTXO;
-
-import java.math.BigInteger;
 
 public class Node {
     public BlockChain blockChain;
+    //Map<String, Producer> producerMap;
 
     public Node(){
         blockChain = new BlockChain();
@@ -22,6 +20,17 @@ public class Node {
             block.addTransaction(trans);
         }
         Pow.run(block);
+        /*
+        System.out.println("[***LOCAL***] A new block comes out: [SUCCESS] : {Time}:" + System.currentTimeMillis());
+        System.out.println("                                               : {Transaction}:" );
+        Transaction.printTransactions(block.transaction));
+        System.out.println("                                               : {Nonce};" + block.getNonce());
+        String prefix = String.join("/", Configure.blockNDNGetBlockPrefix, Utils.bytesToHexString(block.getPrevBlock());
+        Producer producer = new Producer(block, prefix); //挖到新区块，创建生产者
+        Thread thread = new Thread(producer);
+        thread.start();
+        producerMap.put(prefix, producer);
+        */
         blockChain.addBlock(block);
     }
 

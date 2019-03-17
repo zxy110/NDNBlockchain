@@ -1,11 +1,9 @@
 package UTXO;
 
 import crypto.Hash;
-import crypto.IOUtils;
 import crypto.Secp256k1;
 import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
-import src.Block;
-import src.BlockChain;
+import src.Utils;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -77,7 +75,7 @@ public class Transaction {
      * 这里将时间戳,交易的输入地址，输出地址进行拼接，进行 SHA256 和 RipeMD160 哈希
      */
     public String calTxId(){
-        byte[] tx = IOUtils.toBytes(this.timestamp);
+        byte[] tx = Utils.longToBytes(this.timestamp);
         for(TXInput input : this.inputs){
             tx = ByteUtils.concatenate(tx,input.publicKey.getEncoded());
         }
@@ -198,6 +196,11 @@ public class Transaction {
     /**
      * 输出交易
      */
+    public static void printTransactions(ArrayList<Transaction> transactions){
+        for(Transaction transaction:transactions){
+            transaction.printTransaction();
+        }
+    }
     public void printTransaction(){
         System.out.println("txId：" + this.txId);
         for(TXInput input : this.inputs){
@@ -255,10 +258,18 @@ public class Transaction {
         return transaction;
     }
 
-
     public void test(){
     //public static void main(String[] args){
         Secp256k1 secp256k1=new Secp256k1();
+        //生成Genesis, Alice和Sam的公私钥对
+        /*
+        secp256k1.generateKeypair();
+        secp256k1.saveKeypair("Alice");
+        secp256k1.generateKeypair();
+        secp256k1.saveKeypair("Sam");
+        secp256k1.generateKeypair();
+        secp256k1.saveKeypair("Genesis");
+        */
         PublicKey pubKeyAlice = Secp256k1.readPublicKey("Alice");
         PublicKey pubKeySam = Secp256k1.readPublicKey("Sam");
 

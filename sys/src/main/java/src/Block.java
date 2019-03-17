@@ -9,21 +9,23 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Block {
-    protected String version;                  //版本号
-    protected String prevBlock;                //前一区块hash
-    protected long timestamp;                  //时间戳
-    protected long nonce;                      //随机数
-    protected String hash;                     //区块hash
-    protected String merkleRoot;               //Merkle树根
+    protected String version;                  //版本号 9
+    protected String prevBlock;                //前一区块hash 64
+    protected long timestamp;                  //时间戳 8
+    protected long nonce;                      //随机数 8
+    protected String hash;                     //区块hash 64
+    protected String merkleRoot;               //Merkle树根 64
+    protected String target;                   //难度值 64
+    protected int blockSize;                   //区块大小 285  4
     protected ArrayList<Transaction> transaction;   //交易
-    protected String target;                   //难度值
-    //protected long blockSize;                //区块大小
 
     public Block(){
+        this.blockSize =  Configure.INITBLOCKSIZE;
         this.transaction = new ArrayList<Transaction>();
     }
 
     public Block(String prevBlock){
+        this.blockSize =  Configure.INITBLOCKSIZE;
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
@@ -33,6 +35,7 @@ public class Block {
     }
 
     public Block(String prevBlock, ArrayList<Transaction> transaction){
+        this.blockSize =  Configure.INITBLOCKSIZE;
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
@@ -43,6 +46,7 @@ public class Block {
     }
 
     public Block(String prevBlock, ArrayList<Transaction> transaction, long timestamp, long nonce){
+        this.blockSize =  Configure.INITBLOCKSIZE;
         this.version = Configure.VERSION;
         this.target = calTargetStr();
         this.prevBlock = prevBlock;
@@ -51,6 +55,10 @@ public class Block {
         this.transaction = new ArrayList<Transaction>();
         this.transaction = transaction;
     }
+
+    public void setBlockSize(int blockSize) { this.blockSize = blockSize; }
+
+    public int getBlockSize() { return blockSize; }
 
     public void setVersion(String v){ this.version = v; }
 
@@ -103,8 +111,8 @@ public class Block {
         if(this.merkleRoot==null){
             setMerkleRoot();
         }
-        return Arrays.concatenate(Arrays.concatenate(this.prevBlock.getBytes(),IOUtils.toBytes(this.timestamp),
-                this.merkleRoot.getBytes(),IOUtils.bigInteger2byte(calTarget())),IOUtils.toBytes(this.nonce));
+        return Arrays.concatenate(Arrays.concatenate(this.prevBlock.getBytes(),Utils.longToBytes(this.timestamp),
+                this.merkleRoot.getBytes(),Utils.bigInteger2byte(calTarget())),Utils.longToBytes(this.nonce));
     }
 
     public void setAll(){
@@ -119,16 +127,16 @@ public class Block {
      * @return
      */
     public String calMerkleRoot(){
-        if(this.transaction.size()==0) return IOUtils.toHex("NULL".getBytes());
+        if(this.transaction.size()==0) return Utils.toHex("NULL".getBytes());
         ArrayList<byte[]> transArray=new ArrayList<byte[]>();
         for(int i=0;i<this.transaction.size();i++){
             transArray.add(this.transaction.get(i).getTxId().getBytes());
         }
-        return IOUtils.toHex(calMerkle(transArray));
+        return Utils.toHex(calMerkle(transArray));
     }
 
     protected byte[] calMerkle(ArrayList<byte[]> t){
-        if(t.size()==1) return (t.get(0));
+        if(t.size()==1) return (Hash.encodeSHA256(t.get(0)));
         ArrayList<byte[]> nextt=new ArrayList<byte[]>((t.size()+1)/2);
         for(int i=0;i<t.size()-1;i+=2){
             nextt.add(Hash.encodeSHA256(Arrays.concatenate(t.get(i),t.get(i+1))));
@@ -154,7 +162,7 @@ public class Block {
     }
 
     public static String calTargetStr(){
-        String tar = calTarget().toString(16);
+        String tar = (calTarget().subtract(BigInteger.valueOf(1))).toString(16);
         int zeroNum = Configure.TARGET_BITS/4;
         for(int i=0;i<zeroNum;i++){
             tar = "0" + tar;
@@ -163,13 +171,13 @@ public class Block {
     }
 
     public void printBlock(){
-        System.out.println("Version："+this.version);
-        System.out.println("prev-block："+this.prevBlock);
-        System.out.println("hash："+this.hash);
-        System.out.println("Target："+this.target);
-        System.out.println("merkleRoot："+this.merkleRoot);
-        System.out.println("timestamp："+this.timestamp);
-        System.out.println("nonce："+this.nonce);
+        System.out.println("Version："+this.version+"("+this.version.getBytes().length+")");
+        System.out.println("prev-block："+this.prevBlock+"("+this.prevBlock.getBytes().length+")");
+        System.out.println("hash："+this.hash+"("+this.hash.getBytes().length+")");
+        System.out.println("Target："+this.target+"("+this.target.getBytes().length+")");
+        System.out.println("merkleRoot："+this.merkleRoot+"("+this.merkleRoot.getBytes().length+")");
+        System.out.println("timestamp："+this.timestamp+"("+Utils.longToBytes(this.timestamp).length+")");
+        System.out.println("nonce："+this.nonce+"("+Utils.longToBytes(this.nonce).length+")");
         System.out.println("transaction：");
         for(Transaction trans : this.transaction){
             trans.printTransaction();
@@ -182,10 +190,10 @@ public class Block {
      * PublicKey.getEncoded() 是将PublicKey按X509证书格式编码的结果
      * 将SHA256结果转变为十六进制字符串：new String(Hex.encode(hash))，已封装到IOUtils.SHA256toHex(hash)中
      */
-    public static void test(){
-    //public static void main(String[] args){
+    //public static void test(){
+    public static void main(String[] args){
         Block block = new Block(Hash.encodeSHA256Hex("prevBlockHash".getBytes()));
-        Transaction transaction = Transaction.genesisTransaction();
+        Transaction transaction = Transaction.generateTransaction("test");
         block.addTransaction(transaction);
         block.setMerkleRoot();
         block.setHash();

@@ -1,17 +1,9 @@
 package leveldb;
 
-import UTXO.TXInput;
-import UTXO.TXOutput;
-import UTXO.Transaction;
-import crypto.IOUtils;
-import crypto.KeyUtils;
-import crypto.Secp256k1;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import src.Block;
 import src.BlockChain;
-
-import java.security.PublicKey;
+import src.Utils;
 
 public class Serialize {
     public static LevelDb db = new LevelDb("db/Blockchain");
@@ -63,7 +55,7 @@ public class Serialize {
     //通过键在LevelDB中查找Block对象
     public static Block findBlockLevelDB(String key){
         try{
-            String value = IOUtils.readBytes(db.get(key));
+            String value = Utils.readBytes(db.get(key));
             return Serialize.deSerializeBlock(new JSONObject(value));
         }catch(Exception e){
             e.printStackTrace();

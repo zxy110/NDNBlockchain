@@ -1,14 +1,10 @@
 package crypto;
 
-import sun.misc.BASE64Encoder;
-
-import java.io.FileInputStream;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
+
 
 public class Secp256k1 {
     public static KeyPair keyPair;
@@ -37,8 +33,11 @@ public class Secp256k1 {
      */
     public static void saveKeypair(String filename){
         try{
-            KeyUtils.savePublicKey(publicKey,"key/" + filename + "/pub.der");
-            KeyUtils.savePrivateKey(privateKey,"key/" + filename + "/pri.der");
+            // Notice that the directory path is different in different systems.
+            // When in Windows, it's "key/filename/pub.der"
+            // When in linux, it's "sys/key/filename/pub.der"
+            KeyUtils.savePublicKey(publicKey,"sys/key/" + filename + "/pub.der");
+            KeyUtils.savePrivateKey(privateKey,"sys/key/" + filename + "/pri.der");
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -50,7 +49,10 @@ public class Secp256k1 {
      */
     public static PublicKey readPublicKey(String filename){
         try{
-            return KeyUtils.getPublicKey("key/" + filename + "/pub.der","EC");
+            // Notice that the directory path is different in different systems.
+            // When in Windows, it's "key/filename/pub.der"
+            // When in linux, it's "sys/key/filename/pub.der"
+            return KeyUtils.getPublicKey("sys/key/" + filename + "/pub.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
@@ -58,7 +60,10 @@ public class Secp256k1 {
     }
     public static PrivateKey readPrivateKey(String filename){
         try{
-            return KeyUtils.getPrivateKey("key/" + filename + "/pri.der","EC");
+            // Notice that the directory path is different in different systems.
+            // When in Windows, it's "key/filename/pub.der"
+            // When in linux, it's "sys/key/filename/pub.der"
+            return KeyUtils.getPrivateKey("sys/key/" + filename + "/pri.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
@@ -67,7 +72,10 @@ public class Secp256k1 {
 
     public static String readPublicKeyBase64(String filename){
         try{
-            return KeyUtils.getPublicKeyBase64("key/" + filename + "/pub.der","EC");
+            // Notice that the directory path is different in different systems.
+            // When in Windows, it's "key/filename/pub.der"
+            // When in linux, it's "sys/key/filename/pub.der"
+            return KeyUtils.getPublicKeyBase64("sys/key/" + filename + "/pub.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;
@@ -75,7 +83,10 @@ public class Secp256k1 {
     }
     public static String readPrivateKeyBase64(String filename){
         try{
-            return KeyUtils.getPrivateKeyBase64("key/" + filename + "/pri.der","EC");
+            // Notice that the directory path is different in different systems.
+            // When in Windows, it's "key/filename/pub.der"
+            // When in linux, it's "sys/key/filename/pub.der"
+            return KeyUtils.getPrivateKeyBase64("sys/key/" + filename + "/pri.der","EC");
         }catch(Exception e){
             e.printStackTrace();
             return null;

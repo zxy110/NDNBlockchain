@@ -1,6 +1,7 @@
 package crypto;
 
 import org.bouncycastle.util.encoders.Hex;
+import src.Utils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -51,13 +52,13 @@ public class KeyUtils {
      * The following two functions are used to read the keys from files.
      */
     public static PublicKey getPublicKey(String filename, String algorithm) throws Exception {
-        byte[] encodedKey=IOUtils.readBytes(new FileInputStream(filename));
+        byte[] encodedKey= Utils.readBytes(new FileInputStream(filename));
         X509EncodedKeySpec keySpec=new X509EncodedKeySpec(encodedKey);
         KeyFactory keyFactory=KeyFactory.getInstance(algorithm);
         return keyFactory.generatePublic(keySpec);
     }
     public static PrivateKey getPrivateKey(String filename, String algorithm) throws Exception{
-        byte[] encodedKey=IOUtils.readBytes(new FileInputStream(filename));
+        byte[] encodedKey= Utils.readBytes(new FileInputStream(filename));
         PKCS8EncodedKeySpec keySpec=new PKCS8EncodedKeySpec(encodedKey);
         KeyFactory keyFactory=KeyFactory.getInstance(algorithm);
         return keyFactory.generatePrivate(keySpec);
