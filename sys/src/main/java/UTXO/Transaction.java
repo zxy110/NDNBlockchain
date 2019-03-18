@@ -211,7 +211,7 @@ public class Transaction {
         }
     }
 
-
+	//生成创世区块交易
     public static Transaction genesisTransaction(long timestamp){
         Secp256k1 secp256k1=new Secp256k1();
         PublicKey pubKeyGenesis = Secp256k1.readPublicKey("Genesis");
@@ -223,7 +223,7 @@ public class Transaction {
         return transaction;
     }
 
-
+	//生成交易
     public static Transaction generateTransaction(String txId){
         Secp256k1 secp256k1=new Secp256k1();
         //生成Alice和Sam的公私钥对
