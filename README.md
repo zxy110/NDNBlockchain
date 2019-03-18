@@ -4,7 +4,7 @@
 
 1. 项目配置
 
-   需要配置：[NFD][http://named-data.net/doc/NFD/current/]，jndn-0.20.jar，org.json.jar，bcprov-ext-jdk15on-161.jar
+   需要配置：[NFD][http://named-data.net/doc/NFD/current/]，jndn-0.20.jar，org.json.jar，bcprov-ext-jdk15on-161.jar, maven
 
    运行环境：Ubuntu16.04（由于NFD只支持Ubuntu16.04或macOS，因此项目不支持Windows）
 
@@ -22,7 +22,7 @@
 
 3. 运行：
 
-   通过`nfd-start`打开NFD后，运行 sys/src/main/java/src/Node.java 中的main函数。
+   通过`nfd-start`打开NFD后，运行 sys/src/main/java/src/Main.java 中的main函数。
 
    - 系统初始化时会将数据库(sys/db/Blockchain)中的区块加入当前链，每生成一个区块校验合法后，即存入数据库；
    - 在网络传输中未对交易Transaction进行序列化传输，区块的传输和保存都只用Merkle根来代表；

@@ -13,7 +13,7 @@ import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Node {
+public class Main {
     //public void run(){
     public static void main(String[] args){
         Persistence levelDb = new Persistence();
