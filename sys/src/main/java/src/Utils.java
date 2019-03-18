@@ -23,8 +23,8 @@ public class Utils {
         byte[] hash = block.getHash().getBytes();                   //64
         byte[] target = block.getTarget().getBytes();               //64
         byte[] merkleRoot = block.getMerkleRoot().getBytes();       //64
-        byte[] timestamp = Utils.longToBytes(block.getTimestamp());     //8
-        byte[] nonce = Utils.longToBytes(block.getNonce());             //8
+        byte[] timestamp = Utils.longToBytes(block.getTimestamp()); //8
+        byte[] nonce = Utils.longToBytes(block.getNonce());         //8
         byte[] blockSize = Utils.intToBytes(block.getBlockSize());  //4
 
         ArrayList<byte[]> byteArray = new ArrayList<byte[]>();
@@ -173,7 +173,7 @@ public class Utils {
     /**
      * 将哈希结果转变为十六进制字符串：new String(Hex.encode(hash))
      */
-    public static String toHex(byte[] hash){
+    public static String byteToHex(byte[] hash){
         return (new String(Hex.encode(hash)));
     }
 
@@ -192,7 +192,7 @@ public class Utils {
     /**
      * byte[]转String
      */
-    public static String byte2String(byte[] b){
+    public static String byteToString(byte[] b){
         String s="";
         for(int i=0;i<b.length;i++){
             s=s+b[i];
@@ -203,7 +203,7 @@ public class Utils {
     /**
      * BigInteger转String
      */
-    public static String bigInteger2String(BigInteger b){
+    public static String bigIntegerToString(BigInteger b){
         String s="";
         byte[] by=b.toByteArray();
         for(int i=0;i<by.length;i++){
@@ -215,8 +215,16 @@ public class Utils {
     /**
      * BigInteger转byte[]
      */
-    public static byte[] bigInteger2byte(BigInteger b){
-        return bigInteger2String(b).getBytes();
+    public static byte[] bigIntegerToByte(BigInteger b){
+        return bigIntegerToString(b).getBytes();
     }
 
+    public static ByteBuffer arrayToBuffer(int[] array)
+    {
+        ByteBuffer result = ByteBuffer.allocate(array.length);
+        for (int i = 0; i < array.length; ++i)
+            result.put((byte)(array[i] & 0xff));
+        result.flip();
+        return result;
+    }
 }

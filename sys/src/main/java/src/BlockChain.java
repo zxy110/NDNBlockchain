@@ -16,19 +16,36 @@ public class BlockChain {
         utxo=new UTXO(this.blockChain);
     }
 
+    public ArrayList<Block> getBlockChain() {
+        return blockChain;
+    }
+
+    public void setBlockChain(ArrayList<Block> blockChain) {
+        this.blockChain = blockChain;
+    }
+
+    public UTXO getUtxo() {
+        return utxo;
+    }
+
+    public void setUtxo(UTXO utxo) {
+        this.utxo = utxo;
+    }
+
     /**
      * 创世区块
      * @return
      */
     public Block GenesisBlock(){
         Block genesisBlock = new Block(Hash.encodeSHA256Hex("Nchain starts".getBytes()));
-        genesisBlock.transaction.add(Transaction.genesisTransaction());
+        genesisBlock.transaction.add(Transaction.genesisTransaction(1552888105078l));
+        genesisBlock.setTimestamp(1552888105078l);
+        genesisBlock.setNonce(12345l);
         genesisBlock.setAll();
         return genesisBlock;
     }
 
     public void addBlock(Block block){
-        block.setAll();
         blockChain.add(block);
         utxo.addUTXO(block);
     }
@@ -40,7 +57,7 @@ public class BlockChain {
         utxo.addUTXO(block);
     }
 
-    public String prevBlock(){
+    public String getLatestBlock(){
         return this.blockChain.get(this.blockChain.size()-1).hash;
     }
 

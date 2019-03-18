@@ -2,12 +2,8 @@ package leveldb;
 
 import org.json.JSONObject;
 import src.Block;
-import src.BlockChain;
-import src.Utils;
 
 public class Serialize {
-    public static LevelDb db = new LevelDb("db/Blockchain");
-    public static LevelDb utxo = new LevelDb("db/UTXO");
 
     //将Block对象序列化为JSON对象
     public static JSONObject serializeBlock(Block s)throws Exception{
@@ -39,37 +35,6 @@ public class Serialize {
             block.addTransaction(arr.get(i));
         }*/
         return block;
-    }
-
-    //将Block存储在LevelDB中，其中，键为Block的哈希，值为Block对象
-    public static void saveBlockLevelDB(Block block){
-        try {
-            String key = block.getHash();
-            String value = Serialize.serializeBlock(block).toString();
-            db.put(key, value);
-        }catch(Exception  e){
-            e.printStackTrace();
-        }
-    }
-
-    //通过键在LevelDB中查找Block对象
-    public static Block findBlockLevelDB(String key){
-        try{
-            String value = Utils.readBytes(db.get(key));
-            return Serialize.deSerializeBlock(new JSONObject(value));
-        }catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    public void test(){
-        //public static void main(String[] args){
-        BlockChain blockChain = new BlockChain();
-        Block block = blockChain.get(0);
-        Serialize.saveBlockLevelDB(block);
-        block = Serialize.findBlockLevelDB(block.getHash());
-        block.printBlock();
     }
 
     /*

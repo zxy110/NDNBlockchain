@@ -3,16 +3,21 @@ package leveldb;
 import org.iq80.leveldb.DB;
 import org.iq80.leveldb.Options;
 import org.iq80.leveldb.impl.Iq80DBFactory;
+import src.Configure;
 
 import java.io.File;
 
 public class LevelDb {
     private static DB db;
-    private static String charsetName = "UTF-8";
 
     public LevelDb(String filename){
         connectLeveldb(filename);
     }
+
+    public static DB getDb() {
+        return db;
+    }
+
     /*
      * Open a connection to leveldb
      * You need to give filename where .db files saves
@@ -31,7 +36,7 @@ public class LevelDb {
      */
     public static void put(String key, String value){
         try {
-            db.put(key.getBytes(charsetName), value.getBytes(charsetName));
+            db.put(key.getBytes(Configure.CHARSET), value.getBytes(Configure.CHARSET));
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -65,7 +70,7 @@ public class LevelDb {
      */
     public static byte[] get(String key){
         try {
-            return db.get(key.getBytes(charsetName));
+            return db.get(key.getBytes(Configure.CHARSET));
         }catch(Exception e){
             e.printStackTrace();
             return null;
@@ -77,7 +82,7 @@ public class LevelDb {
      */
     public static void delete(String key){
         try {
-            db.delete(key.getBytes(charsetName));
+            db.delete(key.getBytes(Configure.CHARSET));
         }catch(Exception e){
             e.printStackTrace();
         }

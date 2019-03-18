@@ -53,7 +53,7 @@ public class Address {
         for(int i=0;i<publicKey.length;i++){
             System.out.print(publicKey[i]+" ");
         }
-        ByteBuffer byteBuffer = xy.Configure.getPublicKey();
+        ByteBuffer byteBuffer = Configure.getPublicKey();
         System.out.println(byteBuffer.get(0));
         byte[] pub = Secp256k1.readPublicKey("Alice").getEncoded();
         for(int i=0;i<pub.length;i++){

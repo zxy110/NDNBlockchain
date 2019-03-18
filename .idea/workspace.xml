@@ -2,38 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1a2f246-38c8-4928-91f6-7f22375966e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iq80_leveldb_leveldb_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iq80_leveldb_leveldb_api_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sys/sys.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Alice/pri.der" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Alice/pub.der" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Genesis/pri.der" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Genesis/pub.der" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Sam/pri.der" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/key/Sam/pub.der" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/sys/src/main/java/src/Miner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sys/src/main/java/src/Persistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000005.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000008.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000011.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000014.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000017.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000020.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000023.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000026.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000029.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000032.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000035.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000038.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000045.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/MANIFEST-000044" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/UTXO/db/000009.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/UTXO/db/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/UTXO/db/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/UTXO/db/MANIFEST-000008" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/Consensus/Pow.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/Consensus/Pow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/IOUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Block.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/BlockChain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/BlockChainProxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/CheckBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/CheckBlockUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Configure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/Net/Consumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Listener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Miner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Mining.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Peer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/Net/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/xy/VolumeProduction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/Consensus/Pow.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/Consensus/Pow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/UTXO/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/UTXO/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/crypto/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/crypto/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/target/classes/crypto/IOUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/target/classes/crypto/KeyUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/crypto/KeyUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/target/classes/crypto/Secp256k1.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/crypto/Secp256k1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/leveldb/LevelDb.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/leveldb/LevelDb.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/leveldb/Serialize.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/leveldb/Serialize.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/src/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/src/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/src/BlockChain.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/src/BlockChain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/src/Configure.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/src/Configure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/target/classes/src/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/src/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/src/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/sys/target/classes/src/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Block.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/BlockChain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/BlockChainProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/CheckBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/CheckBlockUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Configure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Consumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Listener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Miner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Mining.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Peer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Producer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/target/classes/xy/VolumeProduction.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sys/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,26 +85,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Utils.java">
+        <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+            <state relative-caret-position="23">
+              <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2745#2746#0" expanded="true" />
-                <element signature="e#2798#2799#0" expanded="true" />
-                <element signature="e#3672#3673#0" expanded="true" />
-                <element signature="e#3726#3727#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Block.java">
+        <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Persistence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="1305">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -89,19 +137,29 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sys/src/main/java/Net/Consumer.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/xy/Peer.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/Net/Producer.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/src/IOUtils.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/xy/Utils.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/Net/Producer.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/UTXO/TXInput.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/UTXO/TXOutput.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/Net/Consumer.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/Block.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/Miner.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/Consensus/Pow.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/VolumeProduction.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/xy/CheckBlockUtils.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/xy/Peer.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/src/Node.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" />
-        <option value="$PROJECT_DIR$/sys/src/main/java/src/Block.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/src/Persistence.java" />
       </list>
     </option>
   </component>
@@ -121,11 +179,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="455" />
   </component>
   <component name="ProjectLevelVcsManager">
     <OptionsSetting value="false" id="Update" />
@@ -153,12 +211,6 @@
               <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
               <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
               <item name="sys" type="462c0819:PsiDirectoryNode" />
-              <item name="key" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -175,15 +227,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Blockchain" type="462c0819:PsiDirectoryNode" />
-              <item name="sys" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="leveldb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Blockchain" type="b2602c69:ProjectViewProjectNode" />
@@ -208,8 +251,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552815009881" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/org.json.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552895124812" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -220,7 +263,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="src" />
       <recent name="Net" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sys/src/main/java/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -235,9 +282,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Block">
-    <configuration name="Address" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="crypto.Address" />
+  <component name="RunManager" selected="Application.Node">
+    <configuration name="Block" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Block" />
       <module name="sys" />
       <extension name="coverage">
         <pattern>
@@ -249,8 +296,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Block" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Block" />
+    <configuration name="Miner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Miner" />
       <module name="sys" />
       <extension name="coverage">
         <pattern>
@@ -275,12 +322,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Transaction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="UTXO.Transaction" />
+    <configuration name="Peer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="xy.Peer" />
       <module name="sys" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="UTXO.*" />
+          <option name="PATTERN" value="xy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Serialize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leveldb.Serialize" />
+      <module name="sys" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leveldb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -297,10 +357,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Block" />
-        <item itemvalue="Application.Address" />
         <item itemvalue="Application.Node" />
-        <item itemvalue="Application.Transaction" />
+        <item itemvalue="Application.Serialize" />
+        <item itemvalue="Application.Peer" />
+        <item itemvalue="Application.Miner" />
+        <item itemvalue="Application.Block" />
       </list>
     </recent_temporary>
   </component>
@@ -315,18 +376,20 @@
       <option name="presentableId" value="Default" />
       <updated>1552786309516</updated>
       <workItem from="1552786311039" duration="847000" />
-      <workItem from="1552787207764" duration="13509000" />
+      <workItem from="1552787207764" duration="27458000" />
+      <workItem from="1552887479602" duration="6261000" />
+      <workItem from="1552894290939" duration="753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14356000" />
+    <option name="totallyTimeSpent" value="35319000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="455" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25338647" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21673307" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -335,8 +398,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31007752" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6737805" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40155038" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -345,7 +408,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32868218" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.47256097" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -368,45 +431,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/BlockChain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/VolumeProduction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/BlockChainProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jndn-0.20.jar!/net/named_data/jndn/security/KeyChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="33" column="36" lean-forward="true" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -417,23 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Net/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-297">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Peer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="42" column="15" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/jdk1.8.0_201/src.zip!/java/math/BigInteger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -441,126 +452,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Mining.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Miner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Net/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/IOUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="42" selection-end-line="114" />
-          <folding>
-            <element signature="e#1542#1543#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Consensus/Pow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-291">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Base58.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Hash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-381">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/IOUtils.java" />
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Producer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -575,31 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Configure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Configure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -607,44 +474,335 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Utils.java">
+    <entry file="jar://$PROJECT_DIR$/jndn-0.20.jar!/net/named_data/jndn/util/Blob.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding>
-            <element signature="method#blockToByteArray#0;class#Utils#0" />
-          </folding>
+        <state relative-caret-position="-1260">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java">
+    <entry file="jar://$PROJECT_DIR$/jndn-0.20.jar!/net/named_data/jndn/security/identity/MemoryIdentityStorage.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+        <state relative-caret-position="138">
+          <caret line="44" column="56" lean-forward="true" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/jndn-0.20.jar!/net/named_data/jndn/security/KeyType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Hash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Utils.java">
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Configure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+        <state relative-caret-position="138">
+          <caret line="11" column="106" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="106" />
+          <folding>
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/UTXO/TXInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/UTXO/TXOutput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/BlockChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/BlockChainProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding>
+            <element signature="e#151#152#0" expanded="true" />
+            <element signature="e#185#186#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-522">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Net/Producer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2745#2746#0" expanded="true" />
-            <element signature="e#2798#2799#0" expanded="true" />
-            <element signature="e#3672#3673#0" expanded="true" />
-            <element signature="e#3726#3727#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_201/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="747" selection-start-line="747" selection-end-line="747" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Net/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="281" selection-start-line="281" selection-end-line="281" />
+          <folding>
+            <element signature="e#10388#10389#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Block.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="192" column="4" lean-forward="true" selection-start-line="192" selection-start-column="4" selection-end-line="192" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Miner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="44" column="88" selection-start-line="44" selection-start-column="88" selection-end-line="44" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Consensus/Pow.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="199" lean-forward="true" selection-start-line="199" selection-end-line="199" />
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/UTXO/UTXO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Base58.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1212">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="55" column="32" selection-start-line="55" selection-start-column="32" selection-end-line="55" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../xy/VolumeProduction.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/VolumeProduction.java" />
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Miner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-84">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/CheckBlockUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Mining.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/VolumeProduction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Peer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/UTXO/Transaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="222" column="27" selection-start-line="222" selection-start-column="27" selection-end-line="222" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="53" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/db/Blockchain/db/000003.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret column="1298" selection-start-column="1298" selection-end-column="1298" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/xy/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="80" column="57" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/org.json.jar!/org/json/JSONObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="231" column="11" selection-start-line="231" selection-start-column="11" selection-end-line="231" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Configure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_201/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="69" column="6" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java" />
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="32" column="61" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Persistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

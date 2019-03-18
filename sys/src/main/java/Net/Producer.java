@@ -1,22 +1,19 @@
-package xy;
+package Net;
 
-import java.io.IOException;
-
-import net.named_data.jndn.Data;
-import net.named_data.jndn.Face;
-import net.named_data.jndn.Interest;
-import net.named_data.jndn.InterestFilter;
-import net.named_data.jndn.Name;
-import net.named_data.jndn.OnInterestCallback;
-import net.named_data.jndn.OnRegisterFailed;
+import net.named_data.jndn.*;
 import net.named_data.jndn.encoding.EncodingException;
-import net.named_data.jndn.security.KeyChain;       //安全库提供了一组接口，例如身份管理，策略配置和数据包签名和验证
+import net.named_data.jndn.security.KeyChain;
 import net.named_data.jndn.security.KeyType;
 import net.named_data.jndn.security.SecurityException;
 import net.named_data.jndn.security.identity.IdentityManager;
 import net.named_data.jndn.security.identity.MemoryIdentityStorage;
 import net.named_data.jndn.security.identity.MemoryPrivateKeyStorage;
 import net.named_data.jndn.util.Blob;
+import src.Block;
+import src.Configure;
+import src.Utils;
+
+import java.io.IOException;
 
 public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 	
@@ -27,7 +24,7 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 	String prefix;
 	int responseCount_ = 0;
 		
-	public Producer(Block block, String prefix,KeyChain keyChain, Name certificateName){
+	public Producer(Block block, String prefix, KeyChain keyChain, Name certificateName){
 		this.block = block;
 		this.prefix = prefix;
 		keyChain_ = keyChain;
@@ -69,8 +66,7 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 	    certificateName_ = certificateName;
 	 }
 
-	
-	@Override
+
 	public void onRegisterFailed(Name prefix) {
 		 ++responseCount_;
 	      System.out.println("Register failed for prefix " + prefix.toUri());
@@ -81,7 +77,6 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 	 * create data packet.
 	 * return data packet.
 	 */
-	@Override
 	public void onInterest(Name prefix, Interest interest, Face face, long interestFilterId, InterestFilter filter) {
 		++responseCount_;
 		 Data data = new Data(interest.getName());
@@ -93,7 +88,7 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 			 throw new Error
 	          ("SecurityException in sign: " + e.getMessage());
 		} 
-		System.out.println("***[Producer]*** : Sent src.Block : [Previous src.Block Hash] " + Utils.bytesToHexString(block.prevBlock));
+		System.out.println("***[Producer]*** : Sent src.Block : [Previous src.Block Hash] " + block.getPrevBlock());
 		try {
 			face.putData(data);
 		} catch (IOException e) {
@@ -101,7 +96,6 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 		}
 	}
 
-	@Override
 	public void run() {
 		try {
 			face_ = new Face();

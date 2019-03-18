@@ -22,9 +22,17 @@ public class Pow {
         }
     }
 
-    public static boolean verify(Block block){
+    public static boolean verify(String prevBlock, Block block){
         boolean result=false;
-        if(block.calMerkleRoot().equals(block.getMerkleRoot()) &&
+        /**
+         * verify the block
+         * 1.verify prevBlock hash
+         * 2.verify merkleroot: Because there is no transaction when produce, so we don't check merkleRoot here
+         * 3.verify hash
+         * 4.verify nonce
+         */
+        if(prevBlock.equals(block.getPrevBlock()) &&
+                //block.calMerkleRoot().equals(block.getMerkleRoot())&&
                 (block.calHash()).equals(block.getHash()) &&
                 (new BigInteger(block.getHash(), 16)).compareTo(Block.calTarget()) == -1){
             result=true;

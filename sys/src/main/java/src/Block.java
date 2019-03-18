@@ -112,7 +112,7 @@ public class Block {
             setMerkleRoot();
         }
         return Arrays.concatenate(Arrays.concatenate(this.prevBlock.getBytes(),Utils.longToBytes(this.timestamp),
-                this.merkleRoot.getBytes(),Utils.bigInteger2byte(calTarget())),Utils.longToBytes(this.nonce));
+                this.merkleRoot.getBytes(),Utils.bigIntegerToByte(calTarget())),Utils.longToBytes(this.nonce));
     }
 
     public void setAll(){
@@ -127,12 +127,12 @@ public class Block {
      * @return
      */
     public String calMerkleRoot(){
-        if(this.transaction.size()==0) return Utils.toHex("NULL".getBytes());
+        if(this.transaction.size()==0) return Utils.byteToHex(Hash.encodeSHA256("".getBytes()));
         ArrayList<byte[]> transArray=new ArrayList<byte[]>();
         for(int i=0;i<this.transaction.size();i++){
             transArray.add(this.transaction.get(i).getTxId().getBytes());
         }
-        return Utils.toHex(calMerkle(transArray));
+        return Utils.byteToHex(calMerkle(transArray));
     }
 
     protected byte[] calMerkle(ArrayList<byte[]> t){
@@ -158,11 +158,11 @@ public class Block {
      * 计算难度值，即1左移TARGET_BITS位
      */
     public static BigInteger calTarget(){
-        return BigInteger.valueOf(1).shiftLeft(256-(int)Configure.TARGET_BITS);
+        return (BigInteger.valueOf(1).shiftLeft(256-(int)Configure.TARGET_BITS)).subtract(BigInteger.valueOf(1));
     }
 
     public static String calTargetStr(){
-        String tar = (calTarget().subtract(BigInteger.valueOf(1))).toString(16);
+        String tar = calTarget().toString(16);
         int zeroNum = Configure.TARGET_BITS/4;
         for(int i=0;i<zeroNum;i++){
             tar = "0" + tar;
@@ -190,8 +190,8 @@ public class Block {
      * PublicKey.getEncoded() 是将PublicKey按X509证书格式编码的结果
      * 将SHA256结果转变为十六进制字符串：new String(Hex.encode(hash))，已封装到IOUtils.SHA256toHex(hash)中
      */
-    //public static void test(){
-    public static void main(String[] args){
+    public static void test(){
+    //public static void main(String[] args){
         Block block = new Block(Hash.encodeSHA256Hex("prevBlockHash".getBytes()));
         Transaction transaction = Transaction.generateTransaction("test");
         block.addTransaction(transaction);

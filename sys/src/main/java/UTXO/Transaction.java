@@ -212,12 +212,15 @@ public class Transaction {
     }
 
 
-    public static Transaction genesisTransaction(){
+    public static Transaction genesisTransaction(long timestamp){
         Secp256k1 secp256k1=new Secp256k1();
         PublicKey pubKeyGenesis = Secp256k1.readPublicKey("Genesis");
         PrivateKey priKeyGenesis = Secp256k1.readPrivateKey("Genesis");
         PublicKey pubKeyAlice = Secp256k1.readPublicKey("Alice");
-        return Transaction.generateTrans("Genesis", priKeyGenesis, pubKeyGenesis, pubKeyAlice, 10);
+        Transaction transaction = generateTrans("Genesis", priKeyGenesis, pubKeyGenesis, pubKeyAlice, 10);
+        transaction.setTimestamp(timestamp);
+        transaction.setTxId();
+        return transaction;
     }
 
 
@@ -276,8 +279,8 @@ public class Transaction {
         //交易输入
         byte[] data = ByteUtils.concatenate(pubKeySam.getEncoded(),pubKeyAlice.getEncoded());
         byte[] sig=secp256k1.signData(Secp256k1.readPrivateKey("Alice"), data);
-        TXInput input1 = new TXInput(genesisTransaction().txId, pubKeyAlice, sig);
-        TXInput input2 = new TXInput(genesisTransaction().txId, pubKeyAlice, sig);
+        TXInput input1 = new TXInput(genesisTransaction(1552888105078l).txId, pubKeyAlice, sig);
+        TXInput input2 = new TXInput(genesisTransaction(1552888105078l).txId, pubKeyAlice, sig);
 
         //交易输出
         TXOutput output1 = new TXOutput(2, pubKeySam);
