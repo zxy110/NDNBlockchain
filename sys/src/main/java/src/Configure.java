@@ -13,6 +13,7 @@ public class Configure {
     public static final int SIZEOFINT = 4;
     public static final int SIZEOFLONG = 8;
     public static String CHARSET = "UTF-8";
+    public static String Consensus = "DPos";
     public static final String blockNDNGetBlockPrefix = "/ndn/blockndn/getblocks"; //获得区块的命名格式，没有实现同步区块的格式
     public static final String PUBLIC_KEY = "044dd258cc3e050b570299ef45de5d96e524051096a2a9ae52d22ba8927b167fcef297f35a0de8b7c5789264d2de858dc8582c39368c399fd91dc5a92c33d85aa1";
 

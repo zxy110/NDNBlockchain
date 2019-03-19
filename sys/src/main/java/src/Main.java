@@ -1,5 +1,6 @@
 package src;
 
+import Consensus.ConsensusFactory;
 import Consensus.Pow;
 import Net.Producer;
 import net.named_data.jndn.Face;
@@ -47,7 +48,7 @@ public class Main {
                 minerFlag = false;
             // Update flag value.
             flag = latestBlock.getHash();
-            String prefix = String.join("/", Configure.blockNDNGetBlockPrefix, flag);	//构建一条兴趣名字	/ndn/blockndn/getblocks/PreviousHash
+            String prefix = "/" + Configure.blockNDNGetBlockPrefix + flag;	//构建一条兴趣名字	/ndn/blockndn/getblocks/PreviousHash
             Consumer consumer = new Consumer();
             Interest interest = new Interest(new Name(prefix)); //建立兴趣包
             interest.setInterestLifetimeMilliseconds(1000); //设定生命周期 1000s
@@ -64,7 +65,9 @@ public class Main {
                 if(consumer.getNewBlock()){  //如果获取到了新区块
                     //  The new block is illegal.
                     consumer.getBlock().printBlock();
-                    if(!Pow.verify(blockChain.getLatestBlock(), consumer.getBlock())){  //用该函数判断区块是否合法，如果不合法执行如下操作，如果合法了，直接在blockchain里成功添加了新区块
+                    //Consensus factory
+                    ConsensusFactory cFac = new ConsensusFactory();
+                    if(!cFac.getConsensus(Configure.Consensus).verify(blockChain.getLatestBlock(), consumer.getBlock())){  //用该函数判断区块是否合法，如果不合法执行如下操作，如果合法了，直接在blockchain里成功添加了新区块
                         System.out.println("**Get a new block**:[ERROR] : new block is illegal.");
                         System.out.println("               [src.Block Name] :" + consumer.getBlock().getPrevBlock());
                         continue; //直接进去下一轮while循环等待区块
@@ -72,7 +75,7 @@ public class Main {
                         blockChain.addBlock(consumer.getBlock());
                     }
                     // The src.Block is legal , append to the local blockchain.Create a new producer. //当区块合法加入到本地区块链，并且创建一个生产者对象
-                    String prefixNewBlock = String.join("/", Configure.blockNDNGetBlockPrefix, consumer.getBlock().getPrevBlock());
+                    String prefixNewBlock = "/" + Configure.blockNDNGetBlockPrefix + consumer.getBlock().getPrevBlock();
                     if(!producerMap.containsKey(prefix)){ //如果已经为它产生过producer对象，则不执行
                         Producer producer = new Producer(consumer.getBlock(), prefixNewBlock); //创建生产者，包含新区块数据和它的名字
                         executor.execute(producer);   //异步执行该生产者中的run方法，为了等待收到兴趣来传输最新的区块

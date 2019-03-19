@@ -4,9 +4,11 @@ import java.math.BigInteger;
 import src.Block;
 
 
-public class Pow {
+public class Pow implements Consensus{
 
-    public static void run(Block block){
+    public Pow(){}
+
+    public void run(Block block){
         BigInteger target = block.calTarget();          //难度值
         while(true){
             BigInteger hash = new BigInteger(block.calHash(), 16);
@@ -22,7 +24,7 @@ public class Pow {
         }
     }
 
-    public static boolean verify(String prevBlock, Block block){
+    public boolean verify(String prevBlock, Block block){
         boolean result=false;
         /**
          * verify the block

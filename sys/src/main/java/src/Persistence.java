@@ -38,8 +38,8 @@ public class Persistence {
                     //produce
                     Map<String, Producer> producerMap = new HashMap<String, Producer>();
                     ExecutorService executor = Executors.newFixedThreadPool(10);
-                    String prefix = String.join("/", Configure.blockNDNGetBlockPrefix, block.hash);
-                    String prefixNewBlock = String.join("/", Configure.blockNDNGetBlockPrefix, block.getPrevBlock());
+                    String prefix = "/" + Configure.blockNDNGetBlockPrefix + block.hash;
+                    String prefixNewBlock = "/" + Configure.blockNDNGetBlockPrefix + block.getPrevBlock();
                     if(!producerMap.containsKey(prefix)){ //如果已经为它产生过producer对象，则不执行
                         Producer producer = new Producer(block, prefixNewBlock); //创建生产者，包含新区块数据和它的名字
                         executor.execute(producer);   //异步执行该生产者中的run方法，为了等待收到兴趣来传输最新的区块

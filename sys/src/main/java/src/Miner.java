@@ -1,6 +1,6 @@
 package src;
 
-import Consensus.Pow;
+import Consensus.*;
 import Net.Producer;
 import UTXO.Transaction;
 
@@ -31,7 +31,9 @@ public class Miner implements Runnable{
         if(Transaction.verifyTransaction(trans, this.blockChain.utxo)){
             block.addTransaction(trans);
         }
-        Pow.run(block);
+        //Consensus factory
+        ConsensusFactory cFac = new ConsensusFactory();
+        cFac.getConsensus(Configure.Consensus).run(block);
         block.setAll();
         // test
         //this.blockChain.addBlock(block);
@@ -46,7 +48,7 @@ public class Miner implements Runnable{
         //System.out.println("              {Transaction}:" );
         //Transaction.printTransactions(block.transaction);
         // produce block
-        String prefix = String.join("/", Configure.blockNDNGetBlockPrefix, block.getPrevBlock());
+        String prefix = "/" + Configure.blockNDNGetBlockPrefix + block.getPrevBlock();
         Producer producer = new Producer(block, prefix); //挖到新区块，创建生产者
         Thread thread = new Thread(producer);
         thread.start();
@@ -59,9 +61,11 @@ public class Miner implements Runnable{
         Miner n = new Miner();
         n.run();
         ArrayList<Block> bChain = n.blockChain.blockChain;
-        System.out.println(Pow.verify(bChain.get(bChain.size()-2).hash,bChain.get(bChain.size()-1)));
+        //Consensus factory
+        ConsensusFactory cFac = new ConsensusFactory();
+        System.out.println(cFac.getConsensus(Configure.Consensus).verify(bChain.get(bChain.size()-2).hash,bChain.get(bChain.size()-1)));
         //n.blockChain.printBlockChain();
         n.run();
-        System.out.println(Pow.verify(bChain.get(bChain.size()-2).hash,bChain.get(bChain.size()-1)));
+        System.out.println(cFac.getConsensus(Configure.Consensus).verify(bChain.get(bChain.size()-2).hash,bChain.get(bChain.size()-1)));
     }
 }

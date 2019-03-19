@@ -8,6 +8,7 @@ import src.Utils;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Transaction {
     protected String txId;                       //交易哈希：将交易内容<交易输入地址，输出地址，时间戳>打包进行SHA256哈希
@@ -139,13 +140,17 @@ public class Transaction {
      * @param value 金额
      * @return
      */
-    public static Transaction generateTrans(String txId, PrivateKey priInput, PublicKey pubInput, PublicKey pubOutput, int value){
+    public static Transaction generateTrans(String txId, String send, String recv, int value){
+        PublicKey pubKeySend = Secp256k1.readPublicKey(send);
+        PrivateKey priKeySend = Secp256k1.readPrivateKey(send);
+        PublicKey pubKeyRecv = Secp256k1.readPublicKey(recv);
+
         //交易输入(签名是对输出者公钥进行签名，从而实现和输出绑定)
-        byte[] sig = Secp256k1.signData(priInput, Transaction.generateData(pubOutput));
-        TXInput input = new TXInput(txId, pubInput, sig);
+        byte[] sig = Secp256k1.signData(priKeySend, Transaction.generateData(pubKeyRecv));
+        TXInput input = new TXInput(txId, pubKeySend, sig);
 
         //交易输出
-        TXOutput output = new TXOutput(value, pubOutput);
+        TXOutput output = new TXOutput(value, pubKeyRecv);
 
         //构建交易
         Transaction trans = new Transaction();
@@ -213,11 +218,7 @@ public class Transaction {
 
 	//生成创世区块交易
     public static Transaction genesisTransaction(long timestamp){
-        Secp256k1 secp256k1=new Secp256k1();
-        PublicKey pubKeyGenesis = Secp256k1.readPublicKey("Genesis");
-        PrivateKey priKeyGenesis = Secp256k1.readPrivateKey("Genesis");
-        PublicKey pubKeyAlice = Secp256k1.readPublicKey("Alice");
-        Transaction transaction = generateTrans("Genesis", priKeyGenesis, pubKeyGenesis, pubKeyAlice, 10);
+        Transaction transaction = generateTrans("Genesis", "Genesis", "Alice", 10);
         transaction.setTimestamp(timestamp);
         transaction.setTxId();
         return transaction;
@@ -225,8 +226,8 @@ public class Transaction {
 
 	//生成交易
     public static Transaction generateTransaction(String txId){
-        Secp256k1 secp256k1=new Secp256k1();
         //生成Alice和Sam的公私钥对
+        //Secp256k1 secp256k1=new Secp256k1();
         //secp256k1.generateKeypair();
         //secp256k1.saveKeypair("Alice");
         //secp256k1.generateKeypair();
@@ -238,7 +239,7 @@ public class Transaction {
 
         //交易输入
         byte[] data = ByteUtils.concatenate(pubKeySam.getEncoded(),pubKeyAlice.getEncoded());
-        byte[] sig=secp256k1.signData(Secp256k1.readPrivateKey("Alice"), data);
+        byte[] sig=Secp256k1.signData(Secp256k1.readPrivateKey("Alice"), data);
         TXInput input = new TXInput(txId, pubKeyAlice, sig);
 
         //交易输出
@@ -299,5 +300,25 @@ public class Transaction {
         //System.out.println(transaction.txId);
         System.out.println(Secp256k1.verifySign(pubKeyAlice, data, sig));
         //System.out.println(Secp256k1.verifySign(pubKeySam, data, sig));
+    }
+
+    public void testt(){
+    //public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter senders' name:");
+        String sendName = sc.nextLine();
+        System.out.println("Enter receivers' name:");
+        String recvName = sc.nextLine();
+        System.out.println("Entter Cash address:");
+        String cashAddr = sc.nextLine();
+        System.out.println("Enter Cash:");
+        int cash = sc.nextInt();
+
+        //Generate transaction
+        Transaction transaction = generateTrans(cashAddr, sendName, recvName, cash);
+        transaction.printTransaction();
+        //produce
+        //...
+
     }
 }
