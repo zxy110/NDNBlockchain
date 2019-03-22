@@ -7,9 +7,9 @@ import java.security.Signature;
 
 
 public class Secp256k1 {
-    public static KeyPair keyPair;
-    public static PublicKey publicKey;
-    public static PrivateKey privateKey;
+    private static KeyPair keyPair;
+    private static PublicKey publicKey;
+    private static PrivateKey privateKey;
 
     /**
      * This function is used to generate ECC keys, which uses secp256k1 to generate.

@@ -1,4 +1,4 @@
-package Net;
+package net;
 
 import net.named_data.jndn.*;
 import net.named_data.jndn.encoding.EncodingException;
@@ -16,13 +16,13 @@ import src.Utils;
 import java.io.IOException;
 
 public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
-	
-	Face face_;
-	KeyChain keyChain_;
-	Name certificateName_;
-	Block block;
-	String prefix;
-	int responseCount_ = 0;
+
+	private Face face_;
+	private KeyChain keyChain_;
+	private Name certificateName_;
+	private Block block;
+	private String prefix;
+	private int responseCount_ = 0;
 		
 	public Producer(Block block, String prefix, KeyChain keyChain, Name certificateName){
 		this.block = block;

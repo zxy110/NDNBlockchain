@@ -1,6 +1,6 @@
 package src;
 
-import Net.Producer;
+import net.Producer;
 import leveldb.LevelDb;
 import leveldb.Serialize;
 import org.iq80.leveldb.DBIterator;
@@ -38,7 +38,7 @@ public class Persistence {
                     //produce
                     Map<String, Producer> producerMap = new HashMap<String, Producer>();
                     ExecutorService executor = Executors.newFixedThreadPool(10);
-                    String prefix = "/" + Configure.blockNDNGetBlockPrefix + block.hash;
+                    String prefix = "/" + Configure.blockNDNGetBlockPrefix + block.getHash();
                     String prefixNewBlock = "/" + Configure.blockNDNGetBlockPrefix + block.getPrevBlock();
                     if(!producerMap.containsKey(prefix)){ //如果已经为它产生过producer对象，则不执行
                         Producer producer = new Producer(block, prefixNewBlock); //创建生产者，包含新区块数据和它的名字

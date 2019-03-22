@@ -1,8 +1,6 @@
-package Consensus;
+package consensus;
 
 import src.Block;
-
-import java.math.BigInteger;
 
 public class DPos implements Consensus{
 

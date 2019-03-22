@@ -27,7 +27,7 @@
    - 系统初始化时会将数据库(`sys/db/Blockchain`)中的区块加入当前链，每生成一个区块校验合法后，即存入数据库；
    - 在网络传输中未对交易Transaction进行序列化传输，区块的传输和保存都只用Merkle根来代表；
    - UTXO并未序列化到数据库，后续可能会填坑；
-   - 交易还未开放接口，需要自行设置（后续会填坑），目前代码(`sys/src/main/java/UTXO/Transaction.java`)中有两笔交易生成示例(`genesisTransaction`和`generateTransaction`)，可参考。
+   - 交易还未开放接口，需要自行设置（后续会填坑），目前代码(`sys/src/main/java/utxo/Transaction.java`)中有两笔交易生成示例(`genesisTransaction`和`generateTransaction`)，可参考。
    - 每个主要函数（Block，BlockChain，Transaction，UTXO等）都有test，供自行测试。
 
 4. 参考

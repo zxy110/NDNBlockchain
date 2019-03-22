@@ -1,13 +1,12 @@
 package src;
 
-import Consensus.ConsensusFactory;
-import Consensus.Pow;
-import Net.Producer;
+import consensus.ConsensusFactory;
+import net.Producer;
 import net.named_data.jndn.Face;
 import net.named_data.jndn.Interest;
 import net.named_data.jndn.Name;
 import net.named_data.jndn.encoding.EncodingException;
-import Net.Consumer;
+import net.Consumer;
 
 import java.io.IOException;
 import java.util.*;
@@ -65,7 +64,7 @@ public class Main {
                 if(consumer.getNewBlock()){  //如果获取到了新区块
                     //  The new block is illegal.
                     consumer.getBlock().printBlock();
-                    //Consensus factory
+                    //consensus factory
                     ConsensusFactory cFac = new ConsensusFactory();
                     if(!cFac.getConsensus(Configure.Consensus).verify(blockChain.getLatestBlock(), consumer.getBlock())){  //用该函数判断区块是否合法，如果不合法执行如下操作，如果合法了，直接在blockchain里成功添加了新区块
                         System.out.println("**Get a new block**:[ERROR] : new block is illegal.");
@@ -85,7 +84,7 @@ public class Main {
                     levelDb.saveBlockLevelDB(consumer.getBlock()); //持久化
                     System.out.println("[LOCAL] :  Store a new block: [SUCCESSFUL] : Store Successfully Into Blockchain.");
                     System.out.println("                          [Time]:" + new Date().getTime());
-                    System.out.println("                        [height]:" + blockChain.blockChain.size());
+                    System.out.println("                        [height]:" + blockChain.getBlockChain().size());
                     System.out.println("              [src.Block Prefix]: " + consumer.getBlock().getPrevBlock());
                     System.out.println("            [Previous src.Block]: " + consumer.getBlock().getPrevBlock());
                     System.out.println("              [src.Block Digest]: " + consumer.getBlock().getHash());

@@ -1,6 +1,6 @@
 package src;
 
-import UTXO.Transaction;
+import utxo.Transaction;
 import crypto.*;
 import org.bouncycastle.util.Arrays;
 
@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Block {
-    protected String version;                  //版本号 9
-    protected String prevBlock;                //前一区块hash 64
-    protected long timestamp;                  //时间戳 8
-    protected long nonce;                      //随机数 8
-    protected String hash;                     //区块hash 64
-    protected String merkleRoot;               //Merkle树根 64
-    protected String target;                   //难度值 64
-    protected int blockSize;                   //区块大小 285  4
-    protected ArrayList<Transaction> transaction;   //交易
+    private String version;                  //版本号 9
+    private String prevBlock;                //前一区块hash 64
+    private long timestamp;                  //时间戳 8
+    private long nonce;                      //随机数 8
+    private String hash;                     //区块hash 64
+    private String merkleRoot;               //Merkle树根 64
+    private String target;                   //难度值 64
+    private int blockSize;                   //区块大小 285  4
+    private ArrayList<Transaction> transaction;   //交易
 
     public Block(){
         this.blockSize =  Configure.INITBLOCKSIZE;

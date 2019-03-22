@@ -1,4 +1,4 @@
-package UTXO;
+package utxo;
 
 import crypto.Hash;
 import crypto.KeyUtils;
@@ -6,10 +6,10 @@ import crypto.KeyUtils;
 import java.security.PublicKey;
 
 public class TXOutput {
-    protected String txId;              //该交易的hash值，在交易打包后进行赋值
-    protected int value;                //金额
-    protected String scriptPubKey;      //锁定脚本：此处设置为公钥哈希，即RipeMD160(SHA256(PublicKey))
-    protected PublicKey publicKey;      //接收者的公钥
+    private String txId;              //该交易的hash值，在交易打包后进行赋值
+    private int value;                //金额
+    private String scriptPubKey;      //锁定脚本：此处设置为公钥哈希，即RipeMD160(SHA256(PublicKey))
+    private PublicKey publicKey;      //接收者的公钥
 
     public TXOutput(int value, PublicKey publicKey){
         this.value=value;

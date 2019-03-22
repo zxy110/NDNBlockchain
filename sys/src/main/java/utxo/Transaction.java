@@ -1,4 +1,4 @@
-package UTXO;
+package utxo;
 
 import crypto.Hash;
 import crypto.Secp256k1;
@@ -134,9 +134,8 @@ public class Transaction {
     /**
      * 产生一个输入一个输出的交易
      * @param txId 交易输入的哈希，即对应的上一笔输出交易的哈希
-     * @param priInput 输入者私钥
-     * @param pubInput 输入者公钥
-     * @param pubOutput 输出者公钥
+     * @param send 输入者
+     * @param recv 输入者
      * @param value 金额
      * @return
      */

@@ -1,4 +1,4 @@
-package Consensus;
+package consensus;
 
 public class ConsensusFactory {
     public Consensus getConsensus(String name){

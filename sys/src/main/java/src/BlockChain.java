@@ -1,14 +1,14 @@
 package src;
 
-import UTXO.Transaction;
-import UTXO.UTXO;
+import utxo.Transaction;
+import utxo.UTXO;
 import crypto.Hash;
 
 import java.util.ArrayList;
 
 public class BlockChain {
-    public ArrayList<Block> blockChain;
-    public UTXO utxo;
+    private ArrayList<Block> blockChain;
+    private UTXO utxo;
 
     public BlockChain(){
         this.blockChain = new ArrayList<Block>();
@@ -38,7 +38,7 @@ public class BlockChain {
      */
     public Block GenesisBlock(){
         Block genesisBlock = new Block(Hash.encodeSHA256Hex("Nchain starts".getBytes()));
-        genesisBlock.transaction.add(Transaction.genesisTransaction(1552888105078l));
+        genesisBlock.getTransaction().add(Transaction.genesisTransaction(1552888105078l));
         genesisBlock.setTimestamp(1552888105078l);
         genesisBlock.setNonce(12345l);
         genesisBlock.setAll();
@@ -51,14 +51,14 @@ public class BlockChain {
     }
 
     public void addBlock(ArrayList<Transaction> trans){
-        Block block = new Block(blockChain.get(blockChain.size()-1).hash, trans);
+        Block block = new Block(blockChain.get(blockChain.size()-1).getHash(), trans);
         block.setAll();
         blockChain.add(block);
         utxo.addUTXO(block);
     }
 
     public String getLatestBlock(){
-        return this.blockChain.get(this.blockChain.size()-1).hash;
+        return this.blockChain.get(this.blockChain.size()-1).getHash();
     }
 
     public void printBlockChain(){
@@ -75,7 +75,7 @@ public class BlockChain {
     //public static void main(String[] args) {
         BlockChain test = new BlockChain();
         ArrayList<Transaction> arr=new ArrayList<Transaction>();
-        arr.add(Transaction.generateTransaction(test.blockChain.get(0).transaction.get(0).getTxId()));
+        arr.add(Transaction.generateTransaction(test.blockChain.get(0).getTransaction().get(0).getTxId()));
         test.addBlock(arr);
         test.printBlockChain();
     }

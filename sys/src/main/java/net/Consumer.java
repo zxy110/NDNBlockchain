@@ -1,4 +1,4 @@
-package Net;
+package net;
 
 import net.named_data.jndn.Data;
 import net.named_data.jndn.Interest;
@@ -10,9 +10,9 @@ import src.Utils;
 import java.nio.ByteBuffer;
 
 public class Consumer implements OnData , OnTimeout {
-	protected Block block;
-	protected int timeoutCount = 4;
-	protected boolean getNewBlock = false;
+	private Block block;
+	private int timeoutCount = 4;
+	private boolean getNewBlock = false;
 	
 	public Consumer(){;
 		block = null;
