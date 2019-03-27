@@ -17,7 +17,7 @@
    - POW共识算法挖矿及校验；
    - LevelDB对区块链持久化；
    - UTXO交易池及校验；
-   - 基于NDN的P2P网络通信（参考了Blockndn[https://github.com/LebronJames0423/JinTong]项目）
+   - 基于NDN的P2P网络通信（参考了[Blockndn](https://github.com/LebronJames0423/JinTong)项目）
    - 序列化Block时试验了JsonObject与字节序两种方式
 
 3. 运行：
@@ -32,14 +32,14 @@
 
 4. 参考
 
-   [1]Blockndn: A bitcoin blockchain decentralized system over named data networking[https://github.com/LebronJames0423/JinTong]
+   [1].[Blockndn: A bitcoin blockchain decentralized system over named data networking](https://github.com/LebronJames0423/JinTong)
 
-   [2]基于Java语言构建区块链[https://segmentfault.com/a/1190000013923201]
+   [2].[基于Java语言构建区块链](https://segmentfault.com/a/1190000013923201)
 
-   [3]NDN官网[https://named-data.net/]
+   [3].[NDN官网](https://named-data.net/)
 
    [4]《区块链技术指南》邹均著
 
    [5]《信息中心网络与命名数据网络》雷凯著
 
-   [6]NFD[http://named-data.net/doc/NFD/current/]
+   [6].[NFD](http://named-data.net/doc/NFD/current/)
