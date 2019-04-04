@@ -8,6 +8,9 @@ public class ConsensusFactory {
         else if(name.equals("DPos")){
             return new DPos();
         }
+        else if(name.equals("Mptlbp")){
+            return new Mptlbp();
+        }
         return null;
     }
 }
