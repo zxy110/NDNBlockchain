@@ -1,10 +1,9 @@
-package src;
+package leveldb;
 
-import net.Producer;
-import leveldb.LevelDb;
-import leveldb.Serialize;
+import src.*;
 import org.iq80.leveldb.DBIterator;
 import org.json.JSONObject;
+import net.Producer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +55,7 @@ public class Persistence {
     //将Block存储在LevelDB中，其中，键为Block的哈希，值为Block对象
     public static void saveBlockLevelDB(Block block){
         try {
-            String key = String.valueOf(block.getTimestamp());
+            String key = String.valueOf(block.getHash());
             String value = Serialize.serializeBlock(block).toString();
             db.put(key, value);
         }catch(Exception  e){
@@ -75,7 +74,7 @@ public class Persistence {
         }
     }
 
-    public void test(){
+    private void test(){
         //public static void main(String[] args){
         BlockChain blockChain = new BlockChain();
         Block block = blockChain.get(0);

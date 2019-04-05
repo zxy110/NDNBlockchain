@@ -67,7 +67,7 @@ public class Transaction {
         this.txId = txId;
         //对所有交易输出对应的 txId 赋值
         for(int i=0;i<this.outputs.size();i++){
-            this.outputs.get(i).txId = txId;
+            this.outputs.get(i).setTxId(txId);
         }
     }
 
@@ -78,10 +78,10 @@ public class Transaction {
     public String calTxId(){
         byte[] tx = Utils.longToBytes(this.timestamp);
         for(TXInput input : this.inputs){
-            tx = ByteUtils.concatenate(tx,input.publicKey.getEncoded());
+            tx = ByteUtils.concatenate(tx,input.getPublicKey().getEncoded());
         }
         for(TXOutput output : this.outputs){
-            tx = ByteUtils.concatenate(tx, output.publicKey.getEncoded());
+            tx = ByteUtils.concatenate(tx, output.getPublicKey().getEncoded());
         }
         return Hash.encodeRipeMD160Hex(Hash.encodeSHA256(tx));
     }
@@ -261,7 +261,7 @@ public class Transaction {
         return transaction;
     }
 
-    public void test(){
+    private void test(){
     //public static void main(String[] args){
         Secp256k1 secp256k1=new Secp256k1();
         //生成Genesis, Alice和Sam的公私钥对
@@ -301,7 +301,7 @@ public class Transaction {
         //System.out.println(Secp256k1.verifySign(pubKeySam, data, sig));
     }
 
-    public void testt(){
+    private void testt(){
     //public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter senders' name:");

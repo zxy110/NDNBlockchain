@@ -10,8 +10,8 @@ import java.util.Map;
  * 该类用于初始化UTXO池，便于对交易进行验证
  */
 public class UTXO {
-    private Map<String, TXInput> inputs;
-    private Map<String, TXOutput> outputs;
+    public Map<String, TXInput> inputs;
+    public Map<String, TXOutput> outputs;
 
     public UTXO(ArrayList<Block> blockChain){
         inputs=new HashMap<String, TXInput>();

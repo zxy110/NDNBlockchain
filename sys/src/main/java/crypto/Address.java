@@ -1,7 +1,6 @@
 package crypto;
 
-import src.Configure;
-import src.Utils;
+import src.*;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;

@@ -1,13 +1,14 @@
 package consensus;
 
+import consensus.Consensus;
 import src.Block;
 
-public class Mptlbp implements Consensus{
+public class Mptlbp implements Consensus {
 
     public Mptlbp(){}
 
     public void run(Block block){
-        while(System.currentTimeMillis() % 20!=0);
+
     }
 
     public boolean verify(String prevBlock, Block block){

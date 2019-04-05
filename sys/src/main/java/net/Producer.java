@@ -1,5 +1,6 @@
 package net;
 
+import src.Utils;
 import net.named_data.jndn.*;
 import net.named_data.jndn.encoding.EncodingException;
 import net.named_data.jndn.security.KeyChain;
@@ -9,9 +10,9 @@ import net.named_data.jndn.security.identity.IdentityManager;
 import net.named_data.jndn.security.identity.MemoryIdentityStorage;
 import net.named_data.jndn.security.identity.MemoryPrivateKeyStorage;
 import net.named_data.jndn.util.Blob;
-import src.Block;
 import src.Configure;
-import src.Utils;
+import src.Block;
+
 
 import java.io.IOException;
 

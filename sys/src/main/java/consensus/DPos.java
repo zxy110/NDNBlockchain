@@ -2,7 +2,7 @@ package consensus;
 
 import src.Block;
 
-public class DPos implements Consensus{
+public class DPos implements Consensus {
 
     public DPos(){}
 

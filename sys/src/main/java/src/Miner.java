@@ -1,6 +1,6 @@
 package src;
 
-import consensus.*;
+import consensus.ConsensusFactory;
 import net.Producer;
 import utxo.Transaction;
 
@@ -56,7 +56,7 @@ public class Miner implements Runnable{
     }
 
 
-    public void test(){
+    private void test(){
     //public static void main(String[] args){
         Miner n = new Miner();
         n.run();

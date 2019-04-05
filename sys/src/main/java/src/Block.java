@@ -1,7 +1,7 @@
 package src;
 
+import crypto.Hash;
 import utxo.Transaction;
-import crypto.*;
 import org.bouncycastle.util.Arrays;
 
 import java.math.BigInteger;
@@ -111,7 +111,7 @@ public class Block {
         if(this.merkleRoot==null){
             setMerkleRoot();
         }
-        return Arrays.concatenate(Arrays.concatenate(this.prevBlock.getBytes(),Utils.longToBytes(this.timestamp),
+        return Arrays.concatenate(Arrays.concatenate(this.prevBlock.getBytes(), Utils.longToBytes(this.timestamp),
                 this.merkleRoot.getBytes(),Utils.bigIntegerToByte(calTarget())),Utils.longToBytes(this.nonce));
     }
 
@@ -190,8 +190,8 @@ public class Block {
      * PublicKey.getEncoded() 是将PublicKey按X509证书格式编码的结果
      * 将SHA256结果转变为十六进制字符串：new String(Hex.encode(hash))，已封装到IOUtils.SHA256toHex(hash)中
      */
-    public static void test(){
-    //public static void main(String[] args){
+    private static void test(){
+        //public static void main(String[] args){
         Block block = new Block(Hash.encodeSHA256Hex("prevBlockHash".getBytes()));
         Transaction transaction = Transaction.generateTransaction("test");
         block.addTransaction(transaction);

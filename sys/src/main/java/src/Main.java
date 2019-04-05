@@ -1,12 +1,13 @@
 package src;
 
 import consensus.ConsensusFactory;
+import leveldb.Persistence;
+import net.Consumer;
 import net.Producer;
 import net.named_data.jndn.Face;
 import net.named_data.jndn.Interest;
 import net.named_data.jndn.Name;
 import net.named_data.jndn.encoding.EncodingException;
-import net.Consumer;
 
 import java.io.IOException;
 import java.util.*;
@@ -16,12 +17,12 @@ import java.util.concurrent.Executors;
 public class Main {
     //public void run(){
     public static void main(String[] args){
-        Persistence levelDb = new Persistence();
         BlockChain blockChain = new BlockChain();
         Map<String, Producer> producerMap = new HashMap<String, Producer>();
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
         //initial blockChain with blocks from levelDB
+        Persistence levelDb = new Persistence();
         blockChain = levelDb.init(blockChain);
 
         Face face = new Face();
@@ -35,6 +36,7 @@ public class Main {
 
 
         boolean minerFlag = false;
+        long timeStamp = System.currentTimeMillis();
         // TODO: into while and Miner finish creating a new block, but the minerFlag is still true ,waste a loop time
         while(true){
 
@@ -91,6 +93,11 @@ public class Main {
                     System.out.println("                [src.Block Size]: " + consumer.getBlock().getBlockSize());
                     //System.out.println("               [Transaction]: " + consumer.getBlock().getTransaction());
                     System.out.println("                         [Nonce]: " + consumer.getBlock().getNonce());
+
+                    //calculate delay
+                    System.out.println("Delay: "+(System.currentTimeMillis()-timeStamp));
+                    timeStamp = System.currentTimeMillis();
+
                     continue;
                 }
                 // Timeout: Network Congestion & No Such a Data packet

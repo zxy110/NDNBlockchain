@@ -1,8 +1,8 @@
 package src;
 
+import crypto.Hash;
 import utxo.Transaction;
 import utxo.UTXO;
-import crypto.Hash;
 
 import java.util.ArrayList;
 
@@ -71,7 +71,7 @@ public class BlockChain {
         return this.blockChain.get(index);
     }
 
-    public void test(){
+    private void test(){
     //public static void main(String[] args) {
         BlockChain test = new BlockChain();
         ArrayList<Transaction> arr=new ArrayList<Transaction>();

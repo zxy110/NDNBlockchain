@@ -1,10 +1,12 @@
 package consensus;
 
-import java.math.BigInteger;
+import consensus.Consensus;
 import src.Block;
 
+import java.math.BigInteger;
 
-public class Pow implements Consensus{
+
+public class Pow implements Consensus {
 
     public Pow(){}
 

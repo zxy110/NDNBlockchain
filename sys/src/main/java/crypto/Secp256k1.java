@@ -1,5 +1,7 @@
 package crypto;
 
+import crypto.KeyUtils;
+
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;
@@ -16,7 +18,7 @@ public class Secp256k1 {
      */
     public static void generateKeypair(){
         try{
-            keyPair=KeyUtils.generateKeypair("secp256k1");
+            keyPair= KeyUtils.generateKeypair("secp256k1");
             publicKey=keyPair.getPublic();
             privateKey=keyPair.getPrivate();
         }catch(Exception e){
