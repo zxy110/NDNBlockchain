@@ -2,42 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b00fe42b-f4ba-4dcf-80a8-6ff5f5fd46a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iq80_leveldb_leveldb_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_iq80_leveldb_leveldb_api_0_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/bcprov_ext_jdk15on_161.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jndn_0_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/CURRENT" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/LOCK" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/MANIFEST-000002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/ConsensusFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/ConsensusFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/DPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/DPos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Pow.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Pow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Base58.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Base58.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Hash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/Serialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Serialize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/net/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/net/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/net/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/net/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Miner.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Miner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/UTXO.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/UTXO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/sys.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sys/sys.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sys/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Configure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+            <state relative-caret-position="60">
+              <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -154,11 +123,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="428" />
-    <option name="y" value="87" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="635" />
+    <option name="y" value="98" />
     <option name="width" value="704" />
-    <option name="height" value="472" />
+    <option name="height" value="444" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -265,8 +234,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554460456437" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/new Package src1.png" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554533880234" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NDNBlockchain (3rd copy)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Problems" />
@@ -322,16 +291,15 @@
       <workItem from="1554375750788" duration="1931000" />
       <workItem from="1554386188096" duration="1602000" />
       <workItem from="1554436983647" duration="1062000" />
-      <workItem from="1554442859498" duration="8702000" />
+      <workItem from="1554442859498" duration="12634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15562000" />
+    <option name="totallyTimeSpent" value="19494000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="7" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23505977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -342,7 +310,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37209302" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.95348835" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -359,9 +327,9 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.18406375" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven" order="8" visible="true" weight="0.18406375" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -673,8 +641,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Configure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        <state relative-caret-position="60">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,10 @@
 package src;
 
+import it.unisa.dia.gas.jpbc.Pairing;
+import it.unisa.dia.gas.jpbc.PairingParameters;
+import it.unisa.dia.gas.plaf.jpbc.pairing.PairingFactory;
+import it.unisa.dia.gas.plaf.jpbc.pairing.a.TypeACurveGenerator;
+import javafx.util.Pair;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.encoders.Hex;
 
@@ -11,7 +16,6 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 public class Utils {
-
     /**
      * Block to byte[]
      */

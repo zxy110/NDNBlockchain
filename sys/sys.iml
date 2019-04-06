@@ -12,8 +12,10 @@
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb:0.7" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:16.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb-api:0.7" level="project" />
-    <orderEntry type="library" name="jndn-0.20" level="application" />
-    <orderEntry type="library" name="org.json" level="application" />
     <orderEntry type="library" name="bcprov-ext-jdk15on-1611" level="application" />
+    <orderEntry type="library" name="jndn-0.20" level="project" />
+    <orderEntry type="library" name="org.json" level="project" />
+    <orderEntry type="library" name="stdlib1" level="application" />
+    <orderEntry type="library" name="jpbc-api-2.0.0" level="project" />
   </component>
 </module>

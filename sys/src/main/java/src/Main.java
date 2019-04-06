@@ -15,8 +15,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
-    //public void run(){
-    public static void main(String[] args){
+
+    public void run(){
+    //public static void main(String[] args){
         BlockChain blockChain = new BlockChain();
         Map<String, Producer> producerMap = new HashMap<String, Producer>();
         ExecutorService executor = Executors.newFixedThreadPool(10);
