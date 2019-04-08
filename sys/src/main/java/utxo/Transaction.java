@@ -3,7 +3,7 @@ package utxo;
 import crypto.Hash;
 import crypto.Secp256k1;
 import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
-import src.Utils;
+import Utils.Utils;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;

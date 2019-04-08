@@ -1,12 +1,9 @@
-package src;
+package Utils;
 
-import it.unisa.dia.gas.jpbc.Pairing;
-import it.unisa.dia.gas.jpbc.PairingParameters;
-import it.unisa.dia.gas.plaf.jpbc.pairing.PairingFactory;
-import it.unisa.dia.gas.plaf.jpbc.pairing.a.TypeACurveGenerator;
-import javafx.util.Pair;
 import org.bouncycastle.util.Arrays;
 import org.bouncycastle.util.encoders.Hex;
+import sys.Block;
+import sys.Configure;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -20,7 +17,7 @@ public class Utils {
      * Block to byte[]
      */
     public static byte[] blockToByteArray(Block block){
-        byte[] blockByte=new byte[block.getBlockSize()];
+        byte[] blockByte=new byte[block.getBlockSize()+2*block.getPks().size()*Configure.SIZEOFG1];
         byte[] version = block.getVersion().getBytes();             //9
         byte[] prevBlock = block.getPrevBlock().getBytes();         //64
         byte[] hash = block.getHash().getBytes();                   //64
@@ -29,6 +26,17 @@ public class Utils {
         byte[] timestamp = Utils.longToBytes(block.getTimestamp()); //8
         byte[] nonce = Utils.longToBytes(block.getNonce());         //8
         byte[] blockSize = Utils.intToBytes(block.getBlockSize());  //4
+        byte[] m = block.getM().toBytes();                          //4
+        byte[] p = block.getP().toBytes();
+        byte[] vrfHash = block.getVrfHash().toBytes();
+        byte[] vrfProof = block.getVrfProof().toBytes();
+        byte[] vrfPk = block.getVrfPk().toBytes();
+        byte[] pks=new byte[block.getPks().size()*Configure.SIZEOFG1];
+        byte[] signatures=new byte[block.getPks().size()*Configure.SIZEOFGT];
+        for(int i=0;i<block.getPks().size();i++){
+            System.arraycopy(block.getPks().get(i).toBytes(),0, pks,i*Configure.SIZEOFG1,(i+1)*Configure.SIZEOFG1);
+            System.arraycopy(block.getSignatures().get(i).toBytes(),0, signatures,i*Configure.SIZEOFGT,(i+1)*Configure.SIZEOFGT);
+        }
 
         ArrayList<byte[]> byteArray = new ArrayList<byte[]>();
         byteArray.add(version);
@@ -39,6 +47,13 @@ public class Utils {
         byteArray.add(timestamp);
         byteArray.add(nonce);
         byteArray.add(blockSize);
+        byteArray.add(m);
+        byteArray.add(p);
+        byteArray.add(vrfHash);
+        byteArray.add(vrfProof);
+        byteArray.add(vrfPk);
+        byteArray.add(pks);
+        byteArray.add(signatures);
 
         byteArrayCopy(blockByte, byteArray);
         return blockByte;
@@ -77,6 +92,22 @@ public class Utils {
                 Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG);          //8
         byte[] blockSize = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG,
                 Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT);       //4
+        byte[] m = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR);       //32
+        byte[] p = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1);       //66
+        byte[] vrfHash = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT);       //66
+        byte[] vrfProof = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1);       //66
+        byte[] vrfPk = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1);       //66
+        int length = Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1;
+        int sigLengh = (blockByte.length - length)/2;
+        byte[] pks   = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1 + sigLengh);
+        byte[] signatures = Arrays.copyOfRange(blockByte, Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1 + sigLengh,
+                Configure.VERSIONSIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SHA256SIZE + Configure.SIZEOFLONG + Configure.SIZEOFLONG + Configure.SIZEOFINT + Configure.SIZEOFZR + Configure.SIZEOFG1 + Configure.SIZEOFGT + Configure.SIZEOFG1 + Configure.SIZEOFG1 + sigLengh + sigLengh);
 
         block.setVersion(Utils.readBytes(version));
         block.setPrevBlock(Utils.readBytes(prevBlock));
@@ -86,6 +117,13 @@ public class Utils {
         block.setTimestamp(Utils.byteToLong(timestamp));
         block.setNonce(Utils.byteToLong(nonce));
         block.setBlockSize(Utils.bytesToInt(blockSize,0));
+        block.setM(m);
+        block.setP(p);
+        block.setVrfPk(vrfPk);
+        block.setVrfHash(vrfHash);
+        block.setVrfProof(vrfProof);
+        block.setPks(pks);
+        block.setSignatures(signatures);
 
         return block;
     }

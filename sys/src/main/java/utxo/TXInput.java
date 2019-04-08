@@ -1,6 +1,6 @@
 package utxo;
 
-import crypto.KeyUtils;
+import Utils.KeyUtils;
 
 import java.security.PublicKey;
 

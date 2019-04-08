@@ -238,7 +238,7 @@
                 <!-- Piwik -->
                 <script type="text/javascript">
                 var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/jpbc/" : "http://sourceforge.net/apps/piwik/jpbc/");
-                document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+                document.write(unescape("%3Cscript sys='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
                 </script><script type="text/javascript">
                 piwik_action_name = '';
                 piwik_idsite = 2;
@@ -254,7 +254,7 @@
             <!-- Piwik -->
             <script type="text/javascript">
             var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/jpbc/" : "http://sourceforge.net/apps/piwik/jpbc/");
-            document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+            document.write(unescape("%3Cscript sys='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
             </script><script type="text/javascript">
             piwik_action_name = '';
             piwik_idsite = 2;
@@ -294,7 +294,7 @@
   <body class="composite">
 <!--    <div id="banner">
         <a href="http://gas.dia.unisa.it/projects/jpbc/" id="bannerLeft">
-            <img id="bannerImage" src="http://gas.dia.unisa.it/projects/jpbc/images/banners/banner_4.jpg" alt="" width="1124"/>
+            <img id="bannerImage" sys="http://gas.dia.unisa.it/projects/jpbc/images/banners/banner_4.jpg" alt="" width="1124"/>
         </a>
         <div class="clear">
         <hr/>

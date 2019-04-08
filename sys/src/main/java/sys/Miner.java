@@ -1,8 +1,7 @@
-package src;
+package sys;
 
 import consensus.ConsensusFactory;
 import net.Producer;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import utxo.Transaction;
 
 import java.util.ArrayList;
@@ -10,15 +9,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Miner implements Runnable{
+
     private BlockChain blockChain;
     Map<String, Producer> producerMap;
 
     public Miner(){
-        blockChain = new BlockChain();
-        producerMap = new HashMap<String, Producer>();
     }
 
     public Miner(BlockChain bchain, Map<String, Producer> producerMap){
+        this();
         this.blockChain = bchain;
         this.producerMap = producerMap;
     }
@@ -44,6 +43,15 @@ public class Miner implements Runnable{
         System.out.println("             {Nonce}:" + block.getNonce());
         System.out.println("             {MerkleRoot}:" + block.getMerkleRoot());
         System.out.println("             {Transaction}:" + block.getTransaction().size());
+        if(Configure.Consensus.equals("Mptlbp")){
+            System.out.println("             {m}:" + block.getM());
+            System.out.println("             {P}:" + block.getP());
+            System.out.println("             {vrfPk}:" + block.getVrfPk());
+            System.out.println("             {vrfHash}:" + block.getVrfHash());
+            System.out.println("             {vrfProof}:" + block.getVrfProof());
+            System.out.println("             {pksSize}:" + block.getPks().size());
+            System.out.println("             {sigsSize}:" + block.getSignatures().size());
+        }
         //System.out.println("              {Transaction}:" );
         //Transaction.printTransactions(block.transaction);
 
@@ -62,7 +70,9 @@ public class Miner implements Runnable{
 
     private void test(){
     //public static void main(String[] args){
-        Miner n = new Miner();
+        blockChain = new BlockChain();
+        producerMap = new HashMap<String, Producer>();
+        Miner n = new Miner(blockChain,producerMap);
         n.run();
         ArrayList<Block> bChain = n.blockChain.getBlockChain();
         //consensus factory

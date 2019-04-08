@@ -3,7 +3,7 @@ package leveldb;
 import org.iq80.leveldb.DB;
 import org.iq80.leveldb.Options;
 import org.iq80.leveldb.impl.Iq80DBFactory;
-import src.Configure;
+import sys.Configure;
 
 import java.io.File;
 

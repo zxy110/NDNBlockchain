@@ -1,7 +1,7 @@
-package crypto;
+package Utils;
 
 import org.bouncycastle.util.encoders.Hex;
-import src.Utils;
+import Utils.Utils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 

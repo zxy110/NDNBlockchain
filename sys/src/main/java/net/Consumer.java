@@ -4,8 +4,8 @@ import net.named_data.jndn.Data;
 import net.named_data.jndn.Interest;
 import net.named_data.jndn.OnData;
 import net.named_data.jndn.OnTimeout;
-import src.Utils;
-import src.Block;
+import Utils.Utils;
+import sys.Block;
 
 
 import java.nio.ByteBuffer;

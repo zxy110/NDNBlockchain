@@ -1,6 +1,6 @@
 package net;
 
-import src.Utils;
+import Utils.Utils;
 import net.named_data.jndn.*;
 import net.named_data.jndn.encoding.EncodingException;
 import net.named_data.jndn.security.KeyChain;
@@ -10,8 +10,8 @@ import net.named_data.jndn.security.identity.IdentityManager;
 import net.named_data.jndn.security.identity.MemoryIdentityStorage;
 import net.named_data.jndn.security.identity.MemoryPrivateKeyStorage;
 import net.named_data.jndn.util.Blob;
-import src.Configure;
-import src.Block;
+import sys.Configure;
+import sys.Block;
 
 
 import java.io.IOException;
@@ -89,7 +89,7 @@ public class Producer implements OnInterestCallback, OnRegisterFailed, Runnable{
 			 throw new Error
 	          ("SecurityException in sign: " + e.getMessage());
 		} 
-		System.out.println("***[Producer]*** : Sent src.Block : [Previous src.Block Hash] " + block.getPrevBlock());
+		System.out.println("***[Producer]*** : Sent sys.Block : [Previous sys.Block Hash] " + block.getPrevBlock());
 		try {
 			face.putData(data);
 		} catch (IOException e) {

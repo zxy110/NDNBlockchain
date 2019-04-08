@@ -1,7 +1,7 @@
 package utxo;
 
 import crypto.Hash;
-import crypto.KeyUtils;
+import Utils.KeyUtils;
 
 import java.security.PublicKey;
 

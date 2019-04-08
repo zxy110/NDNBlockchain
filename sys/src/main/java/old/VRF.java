@@ -1,6 +1,6 @@
 package old;
 
-import consensus.BilinearPairing;
+import crypto.BilinearPairing;
 import it.unisa.dia.gas.jpbc.Element;
 
 

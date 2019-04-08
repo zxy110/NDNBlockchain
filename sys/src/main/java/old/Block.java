@@ -1,8 +1,10 @@
-package src;
+package old;
 
 import crypto.Hash;
-import utxo.Transaction;
 import org.bouncycastle.util.Arrays;
+import sys.Configure;
+import Utils.Utils;
+import utxo.Transaction;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

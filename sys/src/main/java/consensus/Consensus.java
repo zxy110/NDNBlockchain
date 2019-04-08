@@ -1,6 +1,6 @@
 package consensus;
 
-import src.Block;
+import sys.Block;
 
 public interface Consensus {
     void run(Block block);

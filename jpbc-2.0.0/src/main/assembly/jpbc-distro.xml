@@ -41,11 +41,11 @@
             <sources>
                 <fileSets>
                     <fileSet>
-                        <outputDirectory>src</outputDirectory>
+                        <outputDirectory>sys</outputDirectory>
                         <excludes>
                             <exclude>target/**</exclude>
                         </excludes>
-                        <directory>src</directory>
+                        <directory>sys</directory>
                     </fileSet>
                     <fileSet>
                         <outputDirectory>.</outputDirectory>
@@ -62,8 +62,8 @@
 
     <fileSets>
         <fileSet>
-            <directory>src</directory>
-            <outputDirectory>src</outputDirectory>
+            <directory>sys</directory>
+            <outputDirectory>sys</outputDirectory>
             <includes/>
         </fileSet>
 

@@ -1,6 +1,6 @@
 package utxo;
 
-import src.Block;
+import sys.Block;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,9 @@
-package crypto;
+package sys;
 
-import src.*;
+import Utils.Utils;
+import crypto.Base58;
+import crypto.Hash;
+import crypto.Secp256k1;
 
 import java.math.BigInteger;
 import java.nio.ByteBuffer;

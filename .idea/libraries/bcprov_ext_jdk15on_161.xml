@@ -2,8 +2,14 @@
   <library name="bcprov-ext-jdk15on-161">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/bcprov-ext-jdk15on-161.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jndn-0.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/org.json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stdlib.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/org.json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/stdlib.jar!/" />
+    </SOURCES>
   </library>
 </component>

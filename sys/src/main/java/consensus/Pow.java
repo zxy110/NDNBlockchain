@@ -1,7 +1,6 @@
 package consensus;
 
-import consensus.Consensus;
-import src.Block;
+import sys.Block;
 
 import java.math.BigInteger;
 

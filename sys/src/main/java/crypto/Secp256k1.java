@@ -1,6 +1,6 @@
 package crypto;
 
-import crypto.KeyUtils;
+import Utils.KeyUtils;
 
 import java.security.KeyPair;
 import java.security.PrivateKey;
