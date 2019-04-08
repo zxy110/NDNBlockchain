@@ -15,6 +15,13 @@ public class Serialize {
         object.put("hash",s.getHash());
         object.put("Target",s.getTarget());
         object.put("merkleRoot",s.getMerkleRoot());
+        object.put("m",s.getM());
+        object.put("P",s.getP());
+        object.put("vrfHash",s.getVrfHash());
+        object.put("vrfProof",s.getVrfProof());
+        object.put("vrfPk",s.getVrfPk());
+        object.put("pkArr",s.getPks());
+        object.put("sigArr",s.getSignatures());
         //object.put("transaction",s.getTransaction());
         return object;
     }
@@ -29,6 +36,13 @@ public class Serialize {
         block.setHash(object.getString("hash"));
         block.setTarget(object.getString("Target"));
         block.setMerkleRoot(object.getString("merkleRoot"));
+        block.setM(object.getString("m").getBytes());
+        block.setP(object.getString("P").getBytes());
+        block.setVrfPk(object.getString("vrfPk").getBytes());
+        block.setVrfHash(object.getString("vrfHash").getBytes());
+        block.setVrfProof(object.getString("vrfProof").getBytes());
+        block.setPks(object.getString("pkArr").getBytes());
+        block.setSignatures(object.getString("sigArr").getBytes());
         /*
         JSONArray arr = object.getJSONArray("transaction");
         for(int i=0;i<arr.length();i++){

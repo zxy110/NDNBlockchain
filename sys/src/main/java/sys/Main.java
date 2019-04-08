@@ -1,6 +1,7 @@
 package sys;
 
 import consensus.ConsensusFactory;
+import leveldb.Persistence;
 import net.Consumer;
 import net.Producer;
 import net.named_data.jndn.Face;
@@ -22,8 +23,8 @@ public class Main {
         ExecutorService executor = Executors.newFixedThreadPool(10);
 
         //initial blockChain with blocks from levelDB
-        //Persistence levelDb = new Persistence();
-        //blockChain = levelDb.init(blockChain);
+        Persistence levelDb = new Persistence();
+        blockChain = levelDb.init(blockChain);
 
         Face face = new Face();
         String flag = "";
@@ -84,7 +85,7 @@ public class Main {
                         producerMap.put(prefixNewBlock, producer);	//将该映射加入到这个map中，即名字-producer对象
                     }
 
-                    //levelDb.saveBlockLevelDB(consumer.getBlock()); //持久化
+                    levelDb.saveBlockLevelDB(consumer.getBlock()); //持久化
                     System.out.println("[LOCAL] :  Store a new block: [SUCCESSFUL] : Store Successfully Into Blockchain.");
                     System.out.println("                          [Time]:" + new Date().getTime());
                     System.out.println("                        [height]:" + blockChain.getBlockChain().size());

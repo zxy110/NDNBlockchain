@@ -2,44 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b00fe42b-f4ba-4dcf-80a8-6ff5f5fd46a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jpbc_plaf_2_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/NDNBlockchain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NDNBlockchain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bcprov_ext_jdk15on_161.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/bcprov_ext_jdk15on_161.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jndn_0_20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_json.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpbc-2.0.0/jpbc-pbc/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/jpbc-2.0.0/jpbc-pbc/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpbc-2.0.0/jpbc-site-skin/src/main/resources/META-INF/maven/site.vm" beforeDir="false" afterPath="$PROJECT_DIR$/jpbc-2.0.0/jpbc-site-skin/src/main/resources/META-INF/maven/site.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jpbc-2.0.0/src/main/assembly/jpbc-distro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jpbc-2.0.0/src/main/assembly/jpbc-distro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/BilinearPairing.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/DPos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Mpts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Pow.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/consensus/Pow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/Vrf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/consensus/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/KeyUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/LevelDb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/net/Consumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/net/Consumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/net/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/net/Producer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/old/MultiProxyThresholdSignature.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/old/MultiProxyThresholdSignature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/old/VRF.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/old/VRF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Block.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Miner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Serialize.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/src/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/TXInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/TXInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/TXOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/TXOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/src/main/java/utxo/UTXO.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/utxo/UTXO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sys/sys.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sys/sys.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000005.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000008.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/000011.sst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/CURRENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/LOCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/MANIFEST-000004" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/db/Blockchain/db/MANIFEST-000010" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/Utils/Serialize.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/Utils/Serialize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sys/src/main/java/sys/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/sys/src/main/java/sys/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/sys/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,8 +25,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="1065">
+              <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sys/src/main/java/Utils/Serialize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -62,9 +58,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sys/src/main/java/sys/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="164">
+              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#578#596#0" expanded="true" />
               </folding>
             </state>
@@ -110,6 +107,8 @@
         <option value="$PROJECT_DIR$/sys/src/main/java/src/Main.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/src/Configure.java" />
         <option value="$PROJECT_DIR$/sys/src/main/java/old/MultiProxyThresholdSignature.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/Utils/Serialize.java" />
+        <option value="$PROJECT_DIR$/sys/src/main/java/sys/Main.java" />
       </list>
     </option>
   </component>
@@ -140,10 +139,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="186" />
-    <option name="y" value="24" />
-    <option name="width" value="1148" />
-    <option name="height" value="567" />
+    <option name="x" value="293" />
+    <option name="y" value="-4" />
+    <option name="width" value="991" />
+    <option name="height" value="550" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -154,7 +153,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -209,7 +207,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="consensus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NDNBlockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NDNBlockchain" type="462c0819:PsiDirectoryNode" />
               <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="leveldb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NDNBlockchain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NDNBlockchain" type="462c0819:PsiDirectoryNode" />
+              <item name="sys" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -224,7 +240,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554733023047" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554733758592" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jpbc-2.0.0/jars/jpbc-api-2.0.0.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -300,15 +316,15 @@
       <workItem from="1554731453952" duration="141000" />
       <workItem from="1554731618789" duration="365000" />
       <workItem from="1554732013583" duration="519000" />
-      <workItem from="1554732560912" duration="229000" />
+      <workItem from="1554732560912" duration="1190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21006000" />
+    <option name="totallyTimeSpent" value="21967000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23904383" />
@@ -322,7 +338,7 @@
       <window_info id="Captures" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32868218" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42170542" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3503876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -332,7 +348,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.35968992" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.35968992" />
       <window_info anchor="bottom" id="Android Profiler" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -463,13 +479,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Utils.java" />
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Serialize.java" />
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/crypto/Secp256k1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -524,16 +533,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/BLock.java" />
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/BlockChain.java" />
     <entry file="uml://JAVA/src">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -591,13 +590,6 @@
     <entry file="file://$PROJECT_DIR$/sys/db/Blockchain/db/000003.log" />
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Configure.java" />
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/src/Main.java" />
-    <entry file="file://$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/old/MultiProxyThresholdSignature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -608,11 +600,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/consensus/Consensus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/consensus/Mptlbp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/leveldb/Persistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="76" column="11" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sys/src/main/java/Utils/Serialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sys/src/main/java/sys/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="164">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#578#596#0" expanded="true" />
           </folding>
         </state>
@@ -635,7 +662,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android</last-edited>
+          <last-edited>Android (NDNBlockchain)|Android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
