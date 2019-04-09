@@ -37,6 +37,7 @@ public class Miner implements Runnable{
         block.setAll();
 
         // print new block
+        System.out.println("[new block comes out Time]: "+System.currentTimeMillis());
         System.out.println("[***LOCAL***] A new block comes out");
         System.out.println("             {Hash}:" + block.getHash());
         System.out.println("             {Time}:" + block.getTimestamp());
@@ -69,7 +70,7 @@ public class Miner implements Runnable{
 
 
     private void test(){
-    //public static void main(String[] args){
+        //public static void main(String[] args){
         blockChain = new BlockChain();
         producerMap = new HashMap<String, Producer>();
         Miner n = new Miner(blockChain,producerMap);

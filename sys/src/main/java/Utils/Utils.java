@@ -32,8 +32,9 @@ public class Utils {
         byte[] vrfProof = block.getVrfProof().toBytes();
         byte[] vrfPk = block.getVrfPk().toBytes();
         byte[] pks=new byte[block.getPks().size()*Configure.SIZEOFG1];
-        byte[] signatures=new byte[block.getPks().size()*Configure.SIZEOFGT];
+        byte[] signatures=new byte[block.getSignatures().size()*Configure.SIZEOFGT];
         for(int i=0;i<block.getPks().size();i++){
+            System.out.println(block.getPks().size());
             System.arraycopy(block.getPks().get(i).toBytes(),0, pks,i*Configure.SIZEOFG1,(i+1)*Configure.SIZEOFG1);
             System.arraycopy(block.getSignatures().get(i).toBytes(),0, signatures,i*Configure.SIZEOFGT,(i+1)*Configure.SIZEOFGT);
         }

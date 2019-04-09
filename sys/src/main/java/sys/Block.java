@@ -256,21 +256,22 @@ public class Block extends BilinearPairing {
     }
 
     public void printBlock(){
-        System.out.println("Version："+this.version+"("+this.version.getBytes().length+")");
-        System.out.println("prev-block："+this.prevBlock+"("+this.prevBlock.getBytes().length+")");
-        System.out.println("hash："+this.hash+"("+this.hash.getBytes().length+")");
-        System.out.println("Target："+this.target+"("+this.target.getBytes().length+")");
-        System.out.println("merkleRoot："+this.merkleRoot+"("+this.merkleRoot.getBytes().length+")");
-        System.out.println("timestamp："+this.timestamp+"("+Utils.longToBytes(this.timestamp).length+")");
-        System.out.println("nonce："+this.nonce+"("+Utils.longToBytes(this.nonce).length+")");
+        System.out.println("Block "+this.getHash());
+        System.out.println("    [Version]："+this.version+"("+this.version.getBytes().length+")");
+        System.out.println("    [prev-block]："+this.prevBlock+"("+this.prevBlock.getBytes().length+")");
+        System.out.println("    [hash]："+this.hash+"("+this.hash.getBytes().length+")");
+        System.out.println("    [Target]："+this.target+"("+this.target.getBytes().length+")");
+        System.out.println("    [merkleRoot]："+this.merkleRoot+"("+this.merkleRoot.getBytes().length+")");
+        System.out.println("    [timestamp]："+this.timestamp+"("+Utils.longToBytes(this.timestamp).length+")");
+        System.out.println("    [nonce]："+this.nonce+"("+Utils.longToBytes(this.nonce).length+")");
         if(Configure.Consensus.equals("Mptlbp")){
-            System.out.println("m:" + this.m);
-            System.out.println("P:" + this.P);
-            System.out.println("vrfPk:" + this.vrfPk);
-            System.out.println("vrfHash:" + this.vrfHash);
-            System.out.println("vrfProof:" + this.vrfProof);
-            System.out.println("pksSize:" + this.getPks().size());
-            System.out.println("sigsSize:" + this.getSignatures().size());
+            System.out.println("    [m]:" + this.m);
+            System.out.println("    [P]:" + this.P);
+            System.out.println("    [vrfPk]:" + this.vrfPk);
+            System.out.println("    [vrfHash]:" + this.vrfHash);
+            System.out.println("    [vrfProof]:" + this.vrfProof);
+            System.out.println("    [pksSize]:" + this.getPks().size());
+            System.out.println("    [sigsSize]:" + this.getSignatures().size());
         }
     }
 

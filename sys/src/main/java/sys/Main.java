@@ -37,27 +37,26 @@ public class Main {
 
 
         boolean minerFlag = false;
-        long timeStamp = System.currentTimeMillis();
         while(true){
             // 未产生新区块
             ArrayList<Block> bChain = blockChain.getBlockChain();
             Block latestBlock = bChain.get(bChain.size()-1);
 
             // 将flag与本地区块链最新的区块头hash进行比较
-            if(flag.equals(latestBlock.getHash())) 
+            if(flag.equals(latestBlock.getHash()))
                 minerFlag = true;
             else
                 minerFlag = false;
             // 更新flag
             flag = latestBlock.getHash();
-            
+
             String prefix = "/" + Configure.blockNDNGetBlockPrefix + flag;	//构建一条兴趣名字	/ndn/blockndn/getblocks/PreviousHash
             Consumer consumer = new Consumer();
             Interest interest = new Interest(new Name(prefix)); //建立兴趣包
             interest.setInterestLifetimeMilliseconds(1000); //设定生命周期 1000s
             try {
                 // 如果收到新区块，直接跳出，如果没有收到且兴趣没有超时超过4次，不断来获取ondata和ontimeout
-                while(!consumer.getNewBlock() && consumer.getTimeoutCount() > 0 ){ 
+                while(!consumer.getNewBlock() && consumer.getTimeoutCount() > 0 ){
                     face.expressInterest(interest, consumer, consumer);
                     face.processEvents();
                     Thread.sleep(1000);
@@ -66,6 +65,7 @@ public class Main {
                 // 得到新区块，验证区块合法性
                 if(consumer.getNewBlock()){  //如果获取到了新区块
                     //输出区块
+                    System.out.println("[Consumer get block Time]: "+System.currentTimeMillis());
                     consumer.getBlock().printBlock();
                     //共识算法工厂初始化
                     ConsensusFactory cFac = new ConsensusFactory();
@@ -85,8 +85,9 @@ public class Main {
                         producerMap.put(prefixNewBlock, producer);	//将该映射加入到这个map中，即名字-producer对象
                     }
 
+                    System.out.println("[Block verified Time]: "+System.currentTimeMillis());
                     //持久化，将区块存储到数据库中
-                    levelDb.saveBlockLevelDB(consumer.getBlock()); 
+                    levelDb.saveBlockLevelDB(consumer.getBlock());
                     System.out.println("[LOCAL] :  Store a new block: [SUCCESSFUL] : Store Successfully Into Blockchain.");
                     System.out.println("                          [Time]:" + new Date().getTime());
                     System.out.println("                        [height]:" + blockChain.getBlockChain().size());
@@ -105,16 +106,11 @@ public class Main {
                         System.out.println("                         [pkArrSize]:" + consumer.getBlock().getPks().size());
                         System.out.println("                         [sigArrSize]:" + consumer.getBlock().getSignatures().size());
                     }
-
-                    //计算区块延时
-                    System.out.println("Delay: "+(System.currentTimeMillis()-timeStamp));
-                    timeStamp = System.currentTimeMillis();
-
                     continue;
                 }
-                
+
                 //如果没有获取新区块
-                if(!minerFlag){  
+                if(!minerFlag){
                     if(consumer.getTimeoutCount() < 0 || consumer.getTimeoutCount() ==0){
                         Runnable miner = new Miner(blockChain,producerMap);
                         Thread thread = new Thread(miner);
