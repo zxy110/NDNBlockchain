@@ -4,8 +4,12 @@ import it.unisa.dia.gas.jpbc.Element;
 
 
 public class Vrf extends BilinearPairing {
-
-    private Element skm, Hash, Proof, VerifyHash, VerifyProof, P, m;
+    private Element m;              //系统轮次
+    private Element skm;            //sk与m的和
+    private Element Hash;           //VRF哈希
+    private Element Proof;          //VRF零知识证明
+    private Element VerifyHash;     //验证哈希
+    private Element VerifyProof;    //验证零知识证明
 
     public Vrf(Element pVal, Element mVal){
         super();
@@ -24,7 +28,9 @@ public class Vrf extends BilinearPairing {
     }
 
     /**
-     * run vrf, calculate vrf_hash and vrf_proof
+     * 运行VRF算法, 计算VRF哈希和VRF零知识证明
+     * VRF_Hash = e(P,P)^(sk+m)
+     * VRF_Proof = (sk+m)*P
      * @param sk
      */
     public void run(Element sk){
@@ -33,18 +39,18 @@ public class Vrf extends BilinearPairing {
         Proof = G1.newElement().getImmutable();
         Hash = GT.newElement().getImmutable();
 
-        // calculate vrf hash
-        Element G = G1.newElement(P.duplicate()).getImmutable();
-        Hash = pairing.pairing(G, G).getImmutable(); // 计算e（P,P）
-        Hash = Hash.powZn(skm.duplicate()).getImmutable();
+        // 计算VRF哈希 
+        Hash = pairing.pairing(P.duplicate(), P.duplicate()).getImmutable(); //计算e(P,P)
+        Hash = Hash.powZn(skm.duplicate()).getImmutable();                   //计算e(P,P)^(sk+m)
 
-        // calculate vrf proof
-        Proof = P.duplicate().mulZn(skm.duplicate()).getImmutable();
-
+        // 计算VRF零知识证明
+        Proof = P.duplicate().mulZn(skm.duplicate()).getImmutable();         //计算(sk+m)*P
     }
 
     /**
-     * check vrf
+     * VRF校验
+     * VerifyHash = e(P,VRF_Proof)
+     * VerifyProof = pk+m*P
      * @param vrfHash
      * @param vrfProof
      * @param pk
@@ -54,9 +60,9 @@ public class Vrf extends BilinearPairing {
         VerifyProof = G1.newElement().getImmutable();
         VerifyHash = GT.newElement().getImmutable();
 
-        VerifyHash = pairing.pairing(P.duplicate(), vrfProof.duplicate());
-        VerifyProof = P.duplicate().mulZn(m).getImmutable();
-        VerifyProof = pk.duplicate().add(VerifyProof.duplicate()).getImmutable();
+        VerifyHash = pairing.pairing(P.duplicate(), vrfProof.duplicate());          //计算e(P,VRF_Proof)
+        VerifyProof = P.duplicate().mulZn(m).getImmutable();                        //计算m*P
+        VerifyProof = pk.duplicate().add(VerifyProof.duplicate()).getImmutable();   //计算pk+m*P
 
         /*
         System.out.println("pk=" + pk);

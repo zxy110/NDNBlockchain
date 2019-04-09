@@ -23,7 +23,8 @@ public class Mptlbp implements Consensus {
     }
 
     /**
-     * generate block
+     * 出块
+     * 计算VRF_Hash,若满足难度值，出块
      * @param block
      */
     public void run(Block block){
@@ -43,9 +44,9 @@ public class Mptlbp implements Consensus {
     }
 
     /**
-     * Function: proxy sign block
-     * 1. check vrf
-     * 2. run mpts: check threshold, sign block
+     * 代理对区块签名
+     * 1. VRF校验
+     * 2. 运行mpts签名算法：检查门限值, 对区块签名
      * @param block
      * @return
      */
@@ -61,10 +62,11 @@ public class Mptlbp implements Consensus {
     }
 
     /**
-     * verify block(proxy node)
-     * check block, sign block, check multi proxy signatures
-     * 1. check block hash, prev-block
-     * 2. proxySig: check vrf, sign block
+     * 代理节点检查区块
+     * 检查区块，对区块签名
+     * 1. 检查区块哈希、前一区块哈希值
+     * 2. 代理节点对区块签名
+     * 3. 广播签名后的区块
      * @param prevBlock
      * @param block
      * @return
@@ -97,8 +99,8 @@ public class Mptlbp implements Consensus {
     }
 
     /**
-     * verify block(any node)
-     * check multi proxy signatures
+     * 全网节点检查区块
+     * 检查多重门限签名
      * @param prevBlock
      * @param block
      * @return
@@ -106,11 +108,12 @@ public class Mptlbp implements Consensus {
     public boolean verify(String prevBlock, Block block) {
         Mpts mpts = new Mpts(block.getP(), block.getM());
 
-        // proxy node run
+        // 代理节点运行
         if(proxyVerify(prevBlock,block)){
             System.out.println("Sign block.");
         };
 
+        // mpts校验：检查多重门限签名
         if(mpts.verify(block.getPks(), block.getSignatures(), Configure.DELEGATES)) {
             System.out.println("Mpts Verify Sucess!");
             return true;

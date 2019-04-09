@@ -13,13 +13,15 @@ public class BilinearPairing {
      * Bilinear Pairing
      */
     public BilinearPairing(){
-        //generate curve and pairing
         /*
+        //产生曲线和双线性对
         TypeACurveGenerator pg = new TypeACurveGenerator(256, 256);
         PairingParameters typeAParams = pg.generate();
-        Out out = new Out("a.properties");
+        //存储到文件中
+        Out out = new Out("a.properties");          
         out.println(typeAParams);
         */
+        //从文件中读取双线性对
         pairing = PairingFactory.getPairing("a.properties");
         PairingFactory.getInstance().setUsePBCWhenPossible(true);
         Zr = pairing.getZr();           //Zr

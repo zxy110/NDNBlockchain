@@ -38,36 +38,36 @@ public class Main {
 
         boolean minerFlag = false;
         long timeStamp = System.currentTimeMillis();
-        // TODO: into while and Miner finish creating a new block, but the minerFlag is still true ,waste a loop time
         while(true){
-
-            // Miner hasn't create a new block yet & Nobody has created yet.
+            // 未产生新区块
             ArrayList<Block> bChain = blockChain.getBlockChain();
             Block latestBlock = bChain.get(bChain.size()-1);
-            if(flag.equals(latestBlock.getHash())) //将flag与本地区块链最新的区块头hash进行比较，如果
+
+            // 将flag与本地区块链最新的区块头hash进行比较
+            if(flag.equals(latestBlock.getHash())) 
                 minerFlag = true;
             else
                 minerFlag = false;
-            // Update flag value.
+            // 更新flag
             flag = latestBlock.getHash();
+            
             String prefix = "/" + Configure.blockNDNGetBlockPrefix + flag;	//构建一条兴趣名字	/ndn/blockndn/getblocks/PreviousHash
             Consumer consumer = new Consumer();
             Interest interest = new Interest(new Name(prefix)); //建立兴趣包
             interest.setInterestLifetimeMilliseconds(1000); //设定生命周期 1000s
             try {
-                // TODO Retransmission after timeout: like TCP/IP windows : exponential order?
-                // try scope is too great.....chaping
-                while(!consumer.getNewBlock() && consumer.getTimeoutCount() > 0 ){  //如果收到新区块，直接跳出，如果没有收到且兴趣没有超时超过4次，不断来获取ondata和ontimeout
+                // 如果收到新区块，直接跳出，如果没有收到且兴趣没有超时超过4次，不断来获取ondata和ontimeout
+                while(!consumer.getNewBlock() && consumer.getTimeoutCount() > 0 ){ 
                     face.expressInterest(interest, consumer, consumer);
                     face.processEvents();
                     Thread.sleep(1000);
                 }
 
-                // Get a new block, use  BlockChainProxy Class to check it. If the block is legal, append to local blockchain.  //BlockChainProxy用于验证区块合法性
+                // 得到新区块，验证区块合法性
                 if(consumer.getNewBlock()){  //如果获取到了新区块
-                    //print block
-                    //consumer.getBlock().printBlock();
-                    //consensus factory
+                    //输出区块
+                    consumer.getBlock().printBlock();
+                    //共识算法工厂初始化
                     ConsensusFactory cFac = new ConsensusFactory();
                     //  The new block is illegal.
                     if(!cFac.getConsensus(Configure.Consensus).verify(blockChain.getLatestBlock(), consumer.getBlock())){  //用该函数判断区块是否合法，如果不合法执行如下操作，如果合法了，直接在blockchain里成功添加了新区块
@@ -77,7 +77,7 @@ public class Main {
                     }else{
                         blockChain.addBlock(consumer.getBlock());
                     }
-                    // The sys.Block is legal , append to the local blockchain.Create a new producer. //当区块合法加入到本地区块链，并且创建一个生产者对象
+                    //当区块合法加入到本地区块链，并且创建一个生产者对象
                     String prefixNewBlock = "/" + Configure.blockNDNGetBlockPrefix + consumer.getBlock().getPrevBlock();
                     if(!producerMap.containsKey(prefix)){ //如果已经为它产生过producer对象，则不执行
                         Producer producer = new Producer(consumer.getBlock(), prefixNewBlock); //创建生产者，包含新区块数据和它的名字
@@ -85,7 +85,8 @@ public class Main {
                         producerMap.put(prefixNewBlock, producer);	//将该映射加入到这个map中，即名字-producer对象
                     }
 
-                    levelDb.saveBlockLevelDB(consumer.getBlock()); //持久化
+                    //持久化，将区块存储到数据库中
+                    levelDb.saveBlockLevelDB(consumer.getBlock()); 
                     System.out.println("[LOCAL] :  Store a new block: [SUCCESSFUL] : Store Successfully Into Blockchain.");
                     System.out.println("                          [Time]:" + new Date().getTime());
                     System.out.println("                        [height]:" + blockChain.getBlockChain().size());
@@ -105,32 +106,27 @@ public class Main {
                         System.out.println("                         [sigArrSize]:" + consumer.getBlock().getSignatures().size());
                     }
 
-                    //calculate delay
+                    //计算区块延时
                     System.out.println("Delay: "+(System.currentTimeMillis()-timeStamp));
                     timeStamp = System.currentTimeMillis();
 
                     continue;
                 }
-                // Timeout: Network Congestion & No Such a Data packet
-                // whether miner thread has been called in the latest loop.
-                if(!minerFlag){  //如果没有获取新区块，且
+                
+                //如果没有获取新区块
+                if(!minerFlag){  
                     if(consumer.getTimeoutCount() < 0 || consumer.getTimeoutCount() ==0){
-                        // The next block doesn't exist yet.
-                        // TODO If timeout, ask other nodes through modified ChronoSync?
                         Runnable miner = new Miner(blockChain,producerMap);
                         Thread thread = new Thread(miner);
                         thread.start();
                     }
                 }
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 System.out.println("Producer: IOException in sending data " + e.getMessage());
                 e.printStackTrace();
             } catch (EncodingException e) {
-                // TODO Auto-generated catch block
                 System.out.println("Producer: EncodingException in sending data " + e.getMessage());
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
