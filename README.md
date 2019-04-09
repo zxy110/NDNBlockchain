@@ -8,11 +8,11 @@
 
    - NFD：NDN守护进程，作为服务器使用
    - maven：本项目为maven项目，使用前需要配置相应pox.xml文件
-   - jndn-0.20.jar：NDN的Java包，用于实现NDN网络通信部分代码
-   - org.json.jar：封装好的Json包，本项目用于数据库数据的序列化（区块与Json转化）
-   - bcprov-ext-jdk15on-161.jar：用于椭圆曲线算法ECC
-   - jpbc-2.0.0/jars/jpbc-api.jar，jpbc-2.0.0/jars/jpbc-plaf.jar：实现双线性映射所需的库
-   - stdlib.jar：IO库，其中的Out类可用于将双线性对存储到a.properties中
+        - libs/jndn-0.20.jar：NDN的Java包，用于实现NDN网络通信部分代码
+        - libs/org.json.jar：封装好的Json包，本项目用于数据库数据的序列化（区块与Json转化）
+        - libs/bcprov-ext-jdk15on-161.jar：用于椭圆曲线算法ECC
+        - libs/jpbc-api.jar，libs/jpbc-plaf.jar：实现双线性映射所需的库
+        - libs/stdlib.jar：IO库，其中的Out类可用于将双线性对存储到a.properties中
 
    运行环境：Ubuntu16.04（由于NFD只支持Ubuntu16.04或macOS，因此项目不支持Windows）
 
