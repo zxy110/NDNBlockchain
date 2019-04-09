@@ -22,13 +22,13 @@ public class Block extends BilinearPairing {
     private int blockSize;                       //区块大小 581+132*Configure.DELEGATES
     private ArrayList<Transaction> transaction;  //交易
     // Mtplbp
-    private Element m;                           //32 --Zr
-    private Element P;                           //66 --G1
-    private Element vrfPk;                       //66 --G1
-    private Element vrfHash;                     //66 --GT
-    private Element vrfProof;                    //66 --G1
-    private ArrayList<Element> signatures;       //Configure.DELEGATES*66
-    private ArrayList<Element> pks;              //Configure.DELEGATES*66
+    private Element m;                           //系统轮次 32 --Zr
+    private Element P;                           //G1上的生成元 66 --G1
+    private Element vrfPk;                       //VRF公钥 66 --G1
+    private Element vrfHash;                     //VRF哈希值 66 --GT
+    private Element vrfProof;                    //VRF零知识证明 66 --G1
+    private ArrayList<Element> signatures;       //多重签名组 Configure.DELEGATES*66
+    private ArrayList<Element> pks;              //签名公钥组 Configure.DELEGATES*66
 
     public Block(){
         //init Mtplbp
