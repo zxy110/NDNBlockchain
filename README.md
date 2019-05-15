@@ -47,12 +47,10 @@
 
    [1].[Blockndn: A bitcoin blockchain decentralized system over named data networking](https://github.com/LebronJames0423/JinTong)
 
-   [2].[基于Java语言构建区块链](https://segmentfault.com/a/1190000013923201)
+   [2].[NDN官网](https://named-data.net/)
 
-   [3].[NDN官网](https://named-data.net/)
+   [3]《区块链技术指南》邹均著
 
-   [4]《区块链技术指南》邹均著
+   [4]《信息中心网络与命名数据网络》雷凯著
 
-   [5]《信息中心网络与命名数据网络》雷凯著
-
-   [6].[NFD](http://named-data.net/doc/NFD/current/)
+   [5].[NFD](http://named-data.net/doc/NFD/current/)
